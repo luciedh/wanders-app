@@ -1,7 +1,12 @@
 .w-btn-primary {
+  display: inline-flex;
   background-color: $pink;
   width: 65vw;
-  height: 10vh;
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5vh;
+  transition-duration: 0.4s;
   a {
     text-decoration: none;
     color: $white;

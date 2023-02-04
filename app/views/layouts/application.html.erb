@@ -14,9 +14,12 @@
     <%= favicon_link_tag asset_path('Wanders.png') %>
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body>
+    <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
     <%= yield %>
+
+    <%= render "shared/footer" %>
   </body>
 </html>

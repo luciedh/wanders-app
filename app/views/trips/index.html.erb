@@ -1,1 +1,7 @@
 <h1>Balade proposées</h1>
+
+<ul>
+  <% @trips.each do |trip| %>
+  <li><%= trip.name %></li>
+  <% end %>
+</ul>

@@ -21,6 +21,7 @@ poi_array.each do |poi|
   place.description = poi["fields"]["texte_description"]
   nul_url = [nil, "https://capgeo.maps.arcgis.com/sharing/rest/content/items/7a34d77806a44be592fa49079c2ab97c/data"]
   place.url_image = poi["fields"]["url_image"] unless nul_url.include? poi["fields"]["url_image"]
+  place.poi_id = poi["fields"]["identifiant"]
   place.save!
   parcours = poi["fields"]["parcours"].split(";")
   parcours.each do |p|
@@ -30,3 +31,5 @@ poi_array.each do |poi|
   category = Category.where(name: poi["fields"]["categorie"]).first_or_create
   place.categories << category
 end
+
+matrix = GoogleDistanceMatrix::Matrix.new

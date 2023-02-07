@@ -1,2 +1,12 @@
-<h1>Combien de temps souhaites-tu te balader ?</h1>
-<h1>Qu'as-tu envie de voir?</h1>
+<div class="w-f-background">
+  <h1>Combien de temps souhaites-tu te balader ?</h1>
+
+  <h1>Qu'as-tu envie de voir?</h1>
+  <div class="m-5" data-controller="category-selection">
+    <% @categories.each do |category| %>
+      <span class="w-tag-badge" data-category-selection-target="category" data-action="click->category-selection#selected"><%= category.name %></span>
+    <% end %>
+  </div>
+
+  <%= link_to("C'est parti!", trips_path, class: "w-btn-primary") %>
+</div>

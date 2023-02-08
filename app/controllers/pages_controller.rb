@@ -4,6 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def ui
+  def custom
   end
 end

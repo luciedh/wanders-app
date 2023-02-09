@@ -5,5 +5,6 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
+    @queries = params[:query].split(";")
   end
 end

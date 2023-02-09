@@ -2,15 +2,16 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="category-selection"
 export default class extends Controller {
-  static targets = ["category"]
+
+  static targets = ["input"]
 
   connect() {
-    console.log(this.categoryTarget)
   }
 
   selected(event) {
-    this.element.classList.add("red")
-    console.log(event.target.innerText)
+    event.currentTarget.classList.remove("w-tag-badge")
+    event.currentTarget.classList.add("w-tag-badge-active")
+    this.inputTarget.value += `${event.currentTarget.innerText};`
   }
 
 }

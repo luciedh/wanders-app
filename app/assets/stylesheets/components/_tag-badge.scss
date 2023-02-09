@@ -10,7 +10,15 @@
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.w-tag-badge:active {
+.w-tag-badge-active {
+  width: auto;
+  height: auto;
   background-color: $pink;
   color: $white;
+  border: solid $pink 2px;
+  border-radius: 25px;
+  font-size: 16px;
+  padding: 0.25em 1em;
+  cursor: pointer;
+  transition-duration: 0.4s;
 }

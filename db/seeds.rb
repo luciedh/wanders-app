@@ -21,7 +21,7 @@ poi_array.each do |poi|
   place.description = poi["fields"]["texte_description"]
   nul_url = [nil, "https://capgeo.maps.arcgis.com/sharing/rest/content/items/7a34d77806a44be592fa49079c2ab97c/data"]
   place.url_image = poi["fields"]["url_image"] unless nul_url.include? poi["fields"]["url_image"]
-  place.poi_id = poi["fields"]["identifiant"]
+  place.poi_id = poi["fields"]["identifiant"].partition("-").last.to_i
   place.save!
   parcours = poi["fields"]["parcours"].split(";")
   parcours.each do |p|
@@ -32,4 +32,23 @@ poi_array.each do |poi|
   place.categories << category
 end
 
-matrix = GoogleDistanceMatrix::Matrix.new
+Trip.all.each do |trip|
+  places_of_trip = trip.places.order(:poi_id)
+  trip.geo_long_departure = places_of_trip.first.geo_long
+  trip.geo_lat_departure = places_of_trip.first.geo_lat
+  trip.geo_long_arrival = places_of_trip.last.geo_long
+  trip.geo_lat_arrival = places_of_trip.last.geo_lat
+  trip.departure = places_of_trip.first.name
+  trip.arrival = places_of_trip.last.name
+  coord = ""
+  places_of_trip.each { |place| coord += "#{place.geo_long}%2C#{place.geo_lat}%3B" }
+  coord = coord.chomp("%3B")
+  route_api = "https://api.mapbox.com/directions/v5/mapbox/walking/#{coord}?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=#{ENV['MAPBOX_API_KEY']}"
+  route_json = URI.open(route_api).read
+  route_resp = JSON.parse(route_json)
+  trip.kms = (route_resp["routes"][0]["distance"]/1000).round(2)
+  trip.duration = route_resp["routes"][0]["duration"]
+  trip.save!
+end
+
+#route_api="https://api.mapbox.com/directions/v5/mapbox/walking/#{geo_long1}%2C#{geo_lat1}%3B#{geo_long2}%2C#{geo_lat2}%3B#{geo_long3}%2C#{geo_lat3}?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=#{token}"

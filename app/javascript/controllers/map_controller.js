@@ -22,10 +22,11 @@ export default class extends Controller {
     this.map.on('load', () => {
       if (this.data.get("routeValue")) {
         this.#addRoute()
+        this.#addPopupToMap()
+        this.#colorFirstAndLast()
       }
     })
 
-    this.#addPopupToMap()
   }
 
   #addMarkersToMap() {
@@ -92,5 +93,21 @@ export default class extends Controller {
         .setPopup(popup) // Add this
         .addTo(this.map)
     });
+  }
+
+  #colorFirstAndLast () {
+    const marker_first = this.markersValue[0]
+    const popup_first = new mapboxgl.Popup().setHTML(marker_first.info_window_html)
+    new mapboxgl.Marker({color: '#1EDD88'})
+      .setLngLat([ marker_first.lng, marker_first.lat ])
+      .setPopup(popup_first)
+      .addTo(this.map)
+
+    const marker_last = this.markersValue.pop();
+    const popup_last = new mapboxgl.Popup().setHTML(marker_last.info_window_html)
+    new mapboxgl.Marker({color: '#FD479E'})
+      .setLngLat([ marker_last.lng, marker_last.lat ])
+      .setPopup(popup_last)
+      .addTo(this.map)
   }
 }

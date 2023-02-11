@@ -2,12 +2,14 @@
 
   <%= image_tag place.url_image, alt: "place's image" %>
   <div class=card-info>
-    <div>
+    <div class="place-data">
       <h2><%= place.name %></h2>
       <p class="address" style="font-style: italic;"><%= place.address %></p>
-      <%  place.average_rating.to_i.times do  %>
-        <i class="bi bi-star-fill"></i>
-      <% end %>
+      <p>
+        <% place.average_rating.to_i.times do  %>
+          <span class="fa-solid fa-star" style="color: #3698B1"></span>
+        <% end %>
+      </p>
     </div>
     <div class="description">
       <%= place.description %>

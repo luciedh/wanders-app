@@ -35,6 +35,7 @@ poi_array.each do |poi|
   end
   category = Category.where(name: poi["fields"]["categorie"]).first_or_create
   place.categories << category
+  place.average_rating = rand(1..5)
 end
 
 Trip.all.each do |trip|
@@ -58,6 +59,7 @@ end
 
 #route_api="https://api.mapbox.com/directions/v5/mapbox/walking/#{geo_long1}%2C#{geo_lat1}%3B#{geo_long2}%2C#{geo_lat2}%3B#{geo_long3}%2C#{geo_lat3}?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=#{token}"
 
+
 Place.find(1).url_image = "https://cdn.shopify.com/s/files/1/0187/8080/files/dragon-rue-du-moulin-vert-paris-14.png?v=1558100829"
 Place.find(2).url_image = "https://cdn.shopify.com/s/files/1/0187/8080/files/Montpar-8.jpg?v=1558694317"
 Place.find(4).url_image = "https://pariscosmop.fr/wp-content/uploads/2022/05/quartier-Maison-du-Bresil-paris.jpg"
@@ -67,3 +69,11 @@ Place.find(8).url_image = "https://passagedutemps.files.wordpress.com/2019/04/15
 Place.find(9).url_image = "https://upload.wikimedia.org/wikipedia/commons/e/e4/240-242_boulevard_Raspail%2C_Paris_14e.jpg"
 Place.find(10).url_image = "https://2.bp.blogspot.com/-jnCfzy4CZhs/U714eqX-BuI/AAAAAAAAS8U/6AQNflQDqVY/s1600/square+montsouris+paris+14+1.JPG"
 Place.find(11).url_image = "https://3.bp.blogspot.com/-YvNYcFMzRJc/U72AzeB6C_I/AAAAAAAAS-I/fm8KPLhj6Ig/s1600/square+montsouris+paris+14+7.JPG"
+
+User.create(
+  # first_name: 'admin',
+  # last_name: 'admin',
+  # username: 'admin',
+  email: 'admin@admin.com',
+  password: 'adminadmin'
+)

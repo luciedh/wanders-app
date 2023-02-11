@@ -24,6 +24,8 @@ export default class extends Controller {
         this.#addRoute()
       }
     })
+
+    this.#addPopupToMap()
   }
 
   #addMarkersToMap() {
@@ -80,5 +82,15 @@ export default class extends Controller {
     this.markersValue.forEach((marker) => {coord = coord + marker.lng + "," + marker.lat + ";"})
     coord = coord.slice(0, -1)
     this.getRoute(coord)
+  }
+
+  #addPopupToMap() {
+    this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup) // Add this
+        .addTo(this.map)
+    });
   }
 }

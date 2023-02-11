@@ -14,7 +14,8 @@ class TripsController < ApplicationController
     @markers = places_of_trip.map do |place|
       {
         lat: place.geo_lat,
-        lng: place.geo_long
+        lng: place.geo_long,
+        info_window_html: render_to_string(partial: "info_window", locals: {place: place})
       }
     end
   end

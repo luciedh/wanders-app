@@ -1,0 +1,16 @@
+<div class="card-place">
+
+  <%= image_tag place.url_image, alt: "place's image" %>
+  <div class=card-info>
+    <div>
+      <h2><%= place.name %></h2>
+      <p class="address" style="font-style: italic;"><%= place.address %></p>
+      <%  place.average_rating.to_i.times do  %>
+        <i class="bi bi-star-fill"></i>
+      <% end %>
+    </div>
+    <div class="description">
+      <%= place.description %>
+    </div>
+  </div>
+</div>

@@ -4,9 +4,14 @@ class TripsController < ApplicationController
   end
 
   def index
-    @trips = Trip.all
-    @queries = params[:query].split(";")
+    if params[:query].present?
+      @queries = params[:query].split(";")
+      @searched_trips = Trip.where(category: @queries)
+    else
+      @searched_trips = Trip.all
+    end
   end
+
 
   def show
     trip = Trip.find(params[:id])
@@ -19,4 +24,5 @@ class TripsController < ApplicationController
       }
     end
   end
+
 end

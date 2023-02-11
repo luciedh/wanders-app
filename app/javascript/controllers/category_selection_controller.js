@@ -9,6 +9,7 @@ export default class extends Controller {
   }
 
   selected(event) {
+    console.log(event.innerText)
     event.currentTarget.classList.remove("w-tag-badge")
     event.currentTarget.classList.add("w-tag-badge-active")
     this.inputTarget.value += `${event.currentTarget.innerText};`

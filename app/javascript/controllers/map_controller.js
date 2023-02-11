@@ -19,6 +19,11 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
 
+    this.map.on('load', () => {
+      if (this.data.get("routeValue")) {
+        this.#addRoute()
+      }
+    })
   }
 
   #addMarkersToMap() {
@@ -33,5 +38,47 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
+
+  async getRoute(coord) {
+    const query = await fetch(
+      `https://api.mapbox.com/directions/v5/mapbox/walking/${coord}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
+      { method: 'GET' }
+    );
+    const json = await query.json();
+    const data = json.routes[0];
+    const route = data.geometry.coordinates;
+    const geojson = {
+      type: 'Feature',
+      properties: {},
+      geometry: {
+        type: 'LineString',
+        coordinates: route
+      }
+    }
+    this.map.addLayer({
+      id: 'route',
+      type: 'line',
+      source: {
+        type: 'geojson',
+        data: geojson
+      },
+      layout: {
+        'line-join': 'round',
+        'line-cap': 'round'
+      },
+      paint: {
+        'line-color': '#3887be',
+        'line-width': 5,
+        'line-opacity': 0.75
+      }
+    });
+    };
+
+  #addRoute() {
+    let coord = ""
+    this.markersValue.forEach((marker) => {coord = coord + marker.lng + "," + marker.lat + ";"})
+    coord = coord.slice(0, -1)
+    this.getRoute(coord)
   }
 }

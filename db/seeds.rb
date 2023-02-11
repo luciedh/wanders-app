@@ -31,6 +31,7 @@ poi_array.each do |poi|
     place.url_image = poi["fields"]["url_image"]
   end
   place.poi_id = poi["fields"]["identifiant"].partition("-").last.to_i
+  place.average_rating = rand(1..5)
   place.save!
   parcours = poi["fields"]["parcours"].split(";")
   parcours.each do |p|
@@ -39,7 +40,6 @@ poi_array.each do |poi|
   end
   category = Category.where(name: poi["fields"]["categorie"]).first_or_create
   place.categories << category
-  place.average_rating = rand(1..5)
 end
 
 Trip.all.each do |trip|

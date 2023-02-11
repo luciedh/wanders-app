@@ -12,4 +12,16 @@ class TripsController < ApplicationController
     end
   end
 
+
+  def show
+    trip = Trip.find(params[:id])
+    places_of_trip = trip.places.order(:poi_id)
+    @markers = places_of_trip.map do |place|
+      {
+        lat: place.geo_lat,
+        lng: place.geo_long
+      }
+    end
+  end
+
 end

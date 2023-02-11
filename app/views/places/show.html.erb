@@ -1,0 +1,5 @@
+<h2><%= @place.name %></h2>
+<p><%= @place.description %></p>
+<% @comments.each do |c| %>
+<%= render  'shared/comments', comment: c%>
+<% end %>

@@ -5,5 +5,8 @@ class PagesController < ApplicationController
   end
 
   def custom
+    @comment = Comment.new
+  end
+  def new
   end
 end

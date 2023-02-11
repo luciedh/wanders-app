@@ -10,6 +10,8 @@ class PlacesController < ApplicationController
   end
 
   def show
-
+    @place = Place.find(params[:id])
+    @comments = Comment.where(place_id: params[:id])
+    @users = User.all
   end
 end

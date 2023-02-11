@@ -1,5 +1,8 @@
 <div class="container">
-  <%= simple_form %>
+  <%= simple_form_for @comment do |f| %>
+    <%= f.input :content %>
+    <%= f.button :submit %>
+  <% end %>
   <%= render "shared/comments" %>
   <%= render "shared/comments" %>
   <%= render "shared/comments" %>

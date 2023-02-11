@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   end
   resources :trips, only: [:index, :show]
   get "search/trip", to: "trips#search_trip", as: :search_trip
-  get 'custom', to: 'pages#custom'
 end

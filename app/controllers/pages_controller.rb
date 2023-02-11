@@ -3,10 +3,7 @@ class PagesController < ApplicationController
 
   def home
   end
-
-  def custom
-    @comment = Comment.new
-  end
+  
   def new
   end
 end

@@ -1,13 +1,17 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
+
 require "open-uri"
 require "json"
 
+
 PARIS_API = "https://opendata.paris.fr/api/records/1.0/search/?dataset=paris-autrement-balades-dans-les-arrondissements-peripheriques-poi&q=&rows=157"
+
 
 poi_json = URI.open(PARIS_API).read
 poi_array = JSON.parse(poi_json)["records"]
+
 
 poi_array.each do |poi|
   place = Place.new

@@ -1,7 +1,19 @@
-<h1>Balade proposées</h1>
-
-<ul>
-  <% @trips.each do |trip| %>
-  <li><%= trip.name %></li>
-  <% end %>
-</ul>
+<div class="trip-container">
+  <h1>Balade proposées</h1>
+    <div data-controller="display-trip-details">
+      <% @searched_trips.each do |trip| %>
+          <div data-action="click->display-trip-details#revealContent">
+            <div class="trip-title">
+              <%= trip.name %>
+            </div>
+            <div class="d-none trip-details">
+              <img src="<%= trip.places.first.url_image %>" alt="illustration du point d'intérêt">
+              <div class="card-trip-infos">
+                <p><%= trip.category %></p>
+                <p><%= trip.places.count %></p>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+</div>

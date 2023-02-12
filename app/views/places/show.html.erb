@@ -1,12 +1,19 @@
-<h2><%= @place.name %></h2>
-<p><%= @place.description %></p>
-<div class="container comments-section active">
-  <%= simple_form_for [@place, @comment] do |f|  %>
-    <%= f.input :content, label: 'Ajouter un commentaire' %>
-    <%= f.submit 'Valider' %>
-  <% end %>
+<div class="container" data-controller='comment-section'>
+  <h2><%= @place.name %></h2>
+  <p><%= @place.description %></p>
+  <i class="fa-solid fa-plus"
+     data-comment-section-target='button'
+     data-action = 'click->comment-section#displayComments'>
+  </i>
+  <div class="container d-none"
+       data-comment-section-target='section'>
+    <%= simple_form_for [@place, @comment] do |f|  %>
+      <%= f.input :content, label: 'Ajouter un commentaire' %>
+      <%= f.submit 'Valider' %>
+    <% end %>
 
-  <% @comments.each do |c| %>
-    <%= render  'shared/comments', comment: c%>
-  <% end %>
+    <% @comments.each do |c| %>
+      <%= render  'shared/comments', comment: c%>
+    <% end %>
+  </div>
 </div>

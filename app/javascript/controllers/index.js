@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CommentSectionController from "./comment_section_controller"
+application.register("comment-section", CommentSectionController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

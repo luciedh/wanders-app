@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_place
+  before_action :set_place, only: :create
 
   def update
     @comment = Comment.find(params[:id])

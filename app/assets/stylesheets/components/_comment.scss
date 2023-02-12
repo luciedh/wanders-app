@@ -1,0 +1,35 @@
+.comment-card {
+  display: flex;
+  padding: 20px 0px;
+}
+.ctn-left{
+  width: 20%;
+}
+.user-avatar {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.user-comment {
+  width: 80%;
+}
+.user-content {
+  font-size: 14px;
+}
+.comment-rating{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+}
+.fa-solid{
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+.fa-thumbs-up {
+  color: $green;
+}
+.fa-thumbs-down{
+  color: $red;
+}

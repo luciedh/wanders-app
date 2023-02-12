@@ -1,0 +1,29 @@
+<div class="comment-card">
+ <div class="ctn-left">
+  <div class="user-avatar">
+    <%= render "shared/avatar", pic: comment.user.profile_pic %>
+  </div>
+  <div class="comment-rating" data-controller='ratings'
+       data-ratings-id-value="<%= comment.id %>">
+    <span href="#"
+       data-ratings-target = 'upvote'
+       data-action = 'click->ratings#vote'
+       data-description = 'upvote'>
+      <i class="fa-solid fa-thumbs-up"
+         data-value = 'upvote'></i>
+    </span>
+    <h4 data-ratings-target = 'rating'><%= comment.rating %></h4>
+    <span href="#"
+       data-ratings-target = 'downvote'
+       data-action = 'click->ratings#vote'
+       data-description = 'downvote'>
+      <i class="fa-solid fa-thumbs-down"
+         data-value = 'downvote'></i>
+    </span>
+  </div>
+ </div>
+ <div class="user-comment">
+  <h3 class="user-name"><%= comment.user.username %></h3>
+  <p class="user-content"><%= comment.content %></p>
+ </div>
+</div>

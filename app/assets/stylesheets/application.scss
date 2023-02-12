@@ -10,8 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-// @import "components/footer";
-// @import "components/banner";
-// @import "components/buttons";
-// @import "components/tag-badge";
-// @import "pages/place-show"
+@import "components/banner";
+@import "components/buttons";
+@import "components/tag-badge";
+@import "pages/bluepage";
+@import "components/forms";
+@import 'components/comment';
+@import "components/footer";
+@import "pages/place-show";
+

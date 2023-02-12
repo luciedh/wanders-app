@@ -11,5 +11,8 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @comments = Comment.where(place_id: params[:id]).order(rating: :desc)
+    @users = User.all
+    @comment = Comment.new
   end
 end

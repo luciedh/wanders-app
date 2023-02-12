@@ -1,0 +1,24 @@
+.card-place {
+  overflow: hidden;
+  width: 100% !important;
+  padding-top: 10px;
+  color: $gray;
+}
+
+.card-place {
+  img {
+    height: 33%;
+    width: 100%;
+    object-fit: cover;
+    max-height: 260px;
+  }
+
+  h2 {
+    margin-top: 10px;
+    color: #3698B1;
+  }
+}
+
+.card-description {
+  color: $gray;
+}

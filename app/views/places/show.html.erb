@@ -1,6 +1,15 @@
-<div class="container" data-controller='comment-section'>
-  <h2><%= @place.name %></h2>
-  <p><%= @place.description %></p>
+<div class="card-place" data-controller='comment-section'>
+  <%= image_tag @place.url_image, alt: "place's image" %>
+  <div>
+    <div>
+      <h2><%= @place.name %></h2>
+      <p><%= @place.address %></p>
+      <p>Note : <%= @place.average_rating %></p>
+    </div>
+    <div>
+      <%= @place.description %>
+    </div>
+  </div>
   <i class="fa-solid fa-plus"
      data-comment-section-target='button'
      data-action = 'click->comment-section#displayComments'>
@@ -15,5 +24,4 @@
     <% @comments.each do |c| %>
       <%= render  'shared/comments', comment: c%>
     <% end %>
-  </div>
 </div>

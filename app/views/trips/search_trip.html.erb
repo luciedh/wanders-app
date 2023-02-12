@@ -1,2 +1,19 @@
-<h1>Combien de temps souhaites-tu te balader ?</h1>
-<h1>Qu'as-tu envie de voir?</h1>
+<div class="trip-container" data-controller="category-selection">
+  <h1>Combien de temps souhaites-tu te balader ?</h1>
+
+  <h1>Qu'as-tu envie de voir?</h1>
+  <div class="m-5">
+    <% @categories.each do |category| %>
+      <span class="w-tag-badge" data-category-selection-target="category" data-action="click->category-selection#selected"><%= category.name %></span>
+    <% end %>
+  </div>
+
+  <%= form_with url: trips_path, method: :get, html: {class:
+    "mb-4", data: {category_selection_target: "form"}} do |f| %>
+    <%= f.text_field :query,
+                     class: "d-none",
+                     data: {category_selection_target: "input"} %>
+
+    <%= f.submit "c'est parti!", class: "w-btn-primary" %>
+    <% end %>
+</div>

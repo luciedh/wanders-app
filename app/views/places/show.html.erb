@@ -1,7 +1,11 @@
 <h2><%= @place.name %></h2>
 <p><%= @place.description %></p>
 <div class="container comments-section active">
-  <%= simple_form_for @comment %>
+  <%= simple_form_for [@place, @comment] do |f|  %>
+    <%= f.input :content, label: 'Ajouter un commentaire' %>
+    <%= f.submit 'Valider' %>
+  <% end %>
+
   <% @comments.each do |c| %>
     <%= render  'shared/comments', comment: c%>
   <% end %>

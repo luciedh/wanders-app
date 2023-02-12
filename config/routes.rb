@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :places, only: [:index, :show] do
     resources :comments, only: [:index, :new, :create]
   end
+  resources :comments, only: [:update]
   resources :trips, only: [:index, :show]
   get "search/trip", to: "trips#search_trip", as: :search_trip
 end

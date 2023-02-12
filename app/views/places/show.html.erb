@@ -1,5 +1,8 @@
 <h2><%= @place.name %></h2>
 <p><%= @place.description %></p>
-<% @comments.each do |c| %>
-<%= render  'shared/comments', comment: c%>
-<% end %>
+<div class="container comments-section active">
+  <%= simple_form_for @comment %>
+  <% @comments.each do |c| %>
+    <%= render  'shared/comments', comment: c%>
+  <% end %>
+</div>

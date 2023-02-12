@@ -2,6 +2,7 @@
   overflow: hidden;
   width: 100% !important;
   padding-top: 10px;
+  color: $gray;
 }
 
 .card-place {
@@ -15,4 +16,8 @@
     margin-top: 10px;
     color: #3698B1;
   }
+}
+
+.card-description {
+  color: $gray;
 }

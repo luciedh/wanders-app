@@ -27,3 +27,35 @@
   text-decoration: none;
   color: $pink;
 }
+
+.btn-balade {
+  display: inline-flex;
+  background-color: $pink;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5vh;
+  padding: 0.5em;
+  text-decoration: none;
+  color: $white;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  bottom: 110px;
+  right: 20px;
+}
+
+.btn-adresse {
+  display: inline-flex;
+  background-color: $pink;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5vh;
+  padding: 0.5em;
+  text-decoration: none;
+  color: $white;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  bottom: 160px;
+  right: 20px;
+}

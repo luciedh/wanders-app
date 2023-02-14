@@ -1,5 +1,5 @@
 .w-tag-badge {
-  width: auto;
+  width: fit-content;
   height: auto;
   background-color: $white;
   color: $pink;
@@ -9,9 +9,10 @@
   padding: 0.25em 1em;
   cursor: pointer;
   transition-duration: 0.4s;
+  margin: 10px;
 }
 .w-tag-badge-active {
-  width: auto;
+  width: fit-content;
   height: auto;
   background-color: $pink;
   color: $white;
@@ -21,4 +22,5 @@
   padding: 0.25em 1em;
   cursor: pointer;
   transition-duration: 0.4s;
+  margin: 10px;
 }

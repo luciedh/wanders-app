@@ -17,5 +17,9 @@
 @import "components/forms";
 @import 'components/comment';
 @import "components/footer";
-@import "pages/place-show";
+// @import "pages/place-show";
 
+// app
+ul {
+  list-style-type: none;
+}

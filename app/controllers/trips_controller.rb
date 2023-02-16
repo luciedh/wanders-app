@@ -23,6 +23,10 @@ class TripsController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {place: place})
       }
     end
+    # @place = Place.find(params[:id])
+    # @comments = Comment.where(place_id: params[:id]).order(rating: :desc)
+    # @users = User.all
+    # @comment = Comment.new
   end
 
 end

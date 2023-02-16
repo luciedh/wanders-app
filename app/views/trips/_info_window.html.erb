@@ -1,6 +1,7 @@
-<div class="card-place">
-
-  <%= image_tag place.url_image, alt: "place's image" %>
+<div class="card-place" data-controller='comment-section'>
+  <% if place.url_image %>
+    <%= image_tag place.url_image, alt: "place's image" %>
+  <% end %>
   <div class=card-info>
     <div class="place-data">
       <h2><%= place.name %></h2>
@@ -16,4 +17,18 @@
       <%= place.description %>
     </div>
   </div>
+   <i class="fa-solid fa-plus"
+     data-comment-section-target='button'
+     data-action = 'click->comment-section#displayComments'>
+  </i>
+  <div class="container d-none"
+       data-comment-section-target='section'>
+     <%= simple_form_for [place, comment] do |f| %>
+        <%= f.input :content, label: 'Ajouter un commentaire' %>
+        <%= f.submit 'Valider' %>
+      <% end %>
+
+    <% comments.each do |c| %>
+      <%= render  'shared/comments', comment: c%>
+    <% end %>
 </div>

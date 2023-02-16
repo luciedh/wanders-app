@@ -55,14 +55,14 @@ Trip.all.each do |trip|
   places_of_trip.each { |place| coord += "#{place.geo_long}%2C#{place.geo_lat}%3B" }
   coord = coord.chomp("%3B")
   route_api = "https://api.mapbox.com/directions/v5/mapbox/walking/#{coord}?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=#{ENV['MAPBOX_API_KEY']}"
-  route_json = URI.open(route_api).read
+  route_json = URI.parse(route_api).open
   route_resp = JSON.parse(route_json)
   trip.kms = (route_resp["routes"][0]["distance"]/1000).round(2)
   trip.duration = route_resp["routes"][0]["duration"]
   trip.save!
 end
 
-#route_api="https://api.mapbox.com/directions/v5/mapbox/walking/#{geo_long1}%2C#{geo_lat1}%3B#{geo_long2}%2C#{geo_lat2}%3B#{geo_long3}%2C#{geo_lat3}?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=#{token}"
+# route_api="https://api.mapbox.com/directions/v5/mapbox/walking/#{geo_long1}%2C#{geo_lat1}%3B#{geo_long2}%2C#{geo_lat2}%3B#{geo_long3}%2C#{geo_lat3}?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=#{token}"
 
 
 Place.find(1).update(url_image: "https://cdn.shopify.com/s/files/1/0187/8080/files/dragon-rue-du-moulin-vert-paris-14.png?v=1558100829")

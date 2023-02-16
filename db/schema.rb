@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_11_114849) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_14_201701) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -95,6 +95,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_11_114849) do
     t.string "category"
   end
 
+  create_table "user_places", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "place_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_user_places_on_place_id"
+    t.index ["user_id"], name: "index_user_places_on_user_id"
+  end
+
   create_table "user_trips", force: :cascade do |t|
     t.date "date"
     t.bigint "user_id", null: false
@@ -129,6 +138,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_11_114849) do
   add_foreign_key "place_categories", "places"
   add_foreign_key "trip_places", "places"
   add_foreign_key "trip_places", "trips"
+  add_foreign_key "user_places", "places"
+  add_foreign_key "user_places", "users"
   add_foreign_key "user_trips", "trips"
   add_foreign_key "user_trips", "users"
 end

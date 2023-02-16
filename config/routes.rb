@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :places, only: [:index, :show] do
     resources :comments, only: [:index, :new, :create]
+    resources :user_places, only: [:create]
   end
   resources :comments, only: [:update]
   resources :trips, only: [:index, :show]

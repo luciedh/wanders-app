@@ -10,6 +10,7 @@
           <span class="fa-solid fa-star" style="color: #3698B1"></span>
         <% end %>
       </p>
+      <%= link_to "Visité", place_user_places_path(place), data: { turbo_method: :post } %>
     </div>
     <div class="card-description">
       <%= place.description %>

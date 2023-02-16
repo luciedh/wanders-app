@@ -18,6 +18,7 @@ class TripsController < ApplicationController
     places_of_trip = trip.places.order(:poi_id)
     @markers = places_of_trip.map do |place|
       {
+        visited: visited?(place),
         lat: place.geo_lat,
         lng: place.geo_long,
         info_window_html: render_to_string(partial: "info_window", locals: {place: place})
@@ -25,4 +26,8 @@ class TripsController < ApplicationController
     end
   end
 
+  private
+  def visited?(place)
+    !place.user_places.where(user_id: current_user).empty?
+  end
 end

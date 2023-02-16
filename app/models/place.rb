@@ -5,4 +5,6 @@ class Place < ApplicationRecord
   has_many :favourite_places, dependent: :destroy
   has_many :trip_places, dependent: :destroy
   has_many :trips, through: :trip_places
+  has_many :user_places, dependent: :destroy
+  has_many :users, through: :user_places
 end

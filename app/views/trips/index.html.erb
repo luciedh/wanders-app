@@ -15,18 +15,12 @@
 
               <div class="card-trip-infos">
                 <div class="infos">
-                  <p class="key-figures"><%= trip.places.count %> </p>
-                  <p>lieux à visiter</p>
-                </div>
-                <div class="infos">
-                  <p class="key-figures"><%= trip.kms %></p>
-                  <p>kms de balade</p>
+                  <p class="key-figures"><i class="fa-solid fa-location-dot"></i>   <%= trip.places.count %> </p>
+                  <p class="key-figures"><i class="fa-sharp fa-solid fa-compass"></i>   <%= trip.kms %> kms</p>
                 </div>
                 <div class="infos">
                   <span class="w-tag-badge"><%= trip.category %></span>
-                </div>
-                <div>
-                  <%= link_to("Lancer cette balade", trip_path(trip), class: "w-btn-primary") %>
+                  <%= link_to("C'est parti", trip_path(trip), class: "w-btn-trip") %>
                 </div>
               </div>
             </div>

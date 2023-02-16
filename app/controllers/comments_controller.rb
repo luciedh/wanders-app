@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.rating = 0
     @comment.save
-    redirect_to place_path(@place)
+    # redirect_to place_path(@place)
   end
 
   private

@@ -1,28 +1,24 @@
 <div class="trip-container">
-  <h1 class="text-center mb-5">Balade proposées</h1>
+  <h1 class="text-center mb-5">Nos balades</h1>
     <div data-controller="display-trip-details">
       <% @searched_trips.each do |trip| %>
 
           <div class="trip-details-container" data-action="click->display-trip-details#revealContent">
 
-            <div class="trip-title">
-              <p><%= trip.name %></p>
+            <div class="trip-header">
+              <div>
+                <%= image_tag trip.places.first.url_image, alt: "place's image" %>
+              </div>
+              <div class="trip-title">
+                <p class="title"><%= trip.name %></p>
+                <p class="description">Départ: <%= trip.places.first.address %> | Durée: <%= trip.duration %> mn</p>
+              </div>
             </div>
 
             <div class="card-trip" data-display-trip-details-target="info">
-
-              <%= image_tag trip.places.first.url_image, alt: "place's image" %>
-
-              <div class="card-trip-infos">
-                <div class="infos">
-                  <p class="key-figures"><i class="fa-solid fa-location-dot"></i>   <%= trip.places.count %> </p>
-                  <p class="key-figures"><i class="fa-sharp fa-solid fa-compass"></i>   <%= trip.kms %> kms</p>
-                </div>
-                <div class="infos">
-                  <span class="w-tag-badge"><%= trip.category %></span>
-                  <%= link_to("C'est parti", trip_path(trip), class: "w-btn-trip") %>
-                </div>
-              </div>
+              <p class="key-figures"><i class="fa-solid fa-location-dot"></i>     <%= trip.places.count %> </p>
+              <span class="w-tag-badge"><%= trip.category %></span>
+              <%= link_to("C'est parti", trip_path(trip), class: "w-btn-trip") %>
             </div>
 
           </div>

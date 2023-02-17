@@ -9,6 +9,8 @@
   margin-bottom: 20rem;
 }
 
+/* Trip search style */
+
 .tag-container {
   width: 100%;
 }
@@ -35,6 +37,8 @@
   transform: translate(-50% -50%);
 }
 
+/* Trips index style */
+
 .trip-details-container {
   &.active {
     .trip-title {
@@ -44,6 +48,78 @@
     .card-trip {
       display: flex;
     }
+  }
+  .trip-header {
+    width: 100%;
+    display: flex;
+    img {
+      height: 50px;
+      width: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .trip-title {
+      background-color: white;
+      width: 80%;
+      height: fit-content;
+      color: $pink;
+      border-radius: 20px;
+      padding: 4px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 20px;
+      .title {
+        text-align: center;
+        font-weight: bold;
+      }
+      .description {
+        font-style: italic;
+        text-align: center;
+        font-size: smaller;
+      }
+    }
+  }
+
+  .card-trip {
+    overflow: hidden;
+    height: 70px;
+    width: 100%;
+    padding: 16px;
+    background-color: white;
+    border-radius: 20px;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    .key-figures {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.4;
+      margin-bottom: 0;
+      margin-top: 8px;
+      color: #151468;
+    }
+  }
+}
+
+/*
+.trip-details-container {
+  &.active {
+    .trip-title {
+      background-color: $pink;
+      color: white;
+    }
+    .card-trip {
+      display: flex;
+    }
+  }
+  img {
+    height: 100%;
+    width: 20%;
+    object-fit: cover;
+    border-radius: 50%;
   }
   .trip-title {
     transition: all ease 0.3s;
@@ -59,11 +135,6 @@
     p {
       text-align: center;
     }
-    .key-figure {
-      color: $light-blue;
-      font-size: large;
-      font-weight: bolder;
-    }
   }
   .card-trip {
     overflow: hidden;
@@ -75,12 +146,7 @@
     margin-bottom: 20px;
     margin-right: auto;
     margin-left: auto;
-    img {
-      height: 100%;
-      width: 20%;
-      object-fit: cover;
-      border-radius: 20px;
-    }
+
     p {
       font-size: 12px;
       line-height: 1.4;
@@ -104,5 +170,5 @@
   }
 
 
-
 }
+ */

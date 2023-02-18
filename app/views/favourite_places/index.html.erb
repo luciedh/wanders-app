@@ -1,0 +1,14 @@
+<div class="fav_place_container">
+  <h1>Lieux favoris</h1>
+  <% @favourite_places.each do |favourite_place| %>
+    <div class="fav_place_card">
+      <%= image_tag favourite_place.place.url_image, alt: "place's image" %>
+      <div class="fav_place_info">
+        <h2><%= favourite_place.place.name %></h2>
+        <p><%= favourite_place.place.address %></p>
+        <p class="favori_icon"><i class="fa-solid fa-star"></i></p>
+        <p class="visited_icon"><i class="fa-solid fa-circle-check"></i></p>
+      </div>
+    </div>
+  <% end %>
+</div>

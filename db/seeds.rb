@@ -171,6 +171,12 @@ PlaceCategory.create(place_id: 15, category_id: 7)
 PlaceCategory.create(place_id: 36, category_id: 8)
 puts "Categories and places association completed"
 
+puts "creating favourite places user 1"
+FavouritePlace.create(user_id: 1, place_id: 1)
+FavouritePlace.create(user_id: 1, place_id: 12)
+puts "favourite places user 1 created"
+
+
 puts "creating admin user"
 User.create(
   # first_name: 'admin',

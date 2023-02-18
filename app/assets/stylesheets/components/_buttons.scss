@@ -59,3 +59,17 @@
   bottom: 160px;
   right: 20px;
 }
+
+.w-btn-trip {
+  width: fit-content;
+  background-color: $pink;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5vh;
+  padding: 0.5em;
+  text-decoration: none;
+  color: $white;
+  transition: all 0.3s ease-in-out;
+  padding-left: 4px;
+  padding-right: 4px;
+}

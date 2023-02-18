@@ -4,16 +4,17 @@
 
 import { application } from "./application"
 
-
-import CommentSectionController from "./comment_section_controller"
-application.register("comment-section", CommentSectionController)
+import AddFavouriteController from "./add_favourite_controller"
+application.register("add-favourite", AddFavouriteController)
 
 import CategorySelectionController from "./category_selection_controller"
 application.register("category-selection", CategorySelectionController)
 
+import CommentSectionController from "./comment_section_controller"
+application.register("comment-section", CommentSectionController)
+
 import DisplayTripDetailsController from "./display_trip_details_controller"
 application.register("display-trip-details", DisplayTripDetailsController)
-
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

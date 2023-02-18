@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :user_places, only: [:create]
   end
   resources :comments, only: [:update]
+  resources :favourite_places, only: [:index]
   resources :trips, only: [:index, :show] do
     resources :user_trips, only: [:create]
   end

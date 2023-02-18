@@ -23,12 +23,13 @@
   </i>
   <div class="container d-none"
        data-comment-section-target='section'>
-     <%= simple_form_for [place, comment] do |f| %>
-        <%= f.input :content, label: 'Ajouter un commentaire' %>
+     <%= simple_form_for [place, comment], html: {data: {comment_section_target: 'form', action: "submit->comment-section#createComment"}} do |f| %>
+        <%= f.input :content, label: 'Enrichissez ce lieu :' %>
         <%= f.submit 'Valider' %>
       <% end %>
-
+  <div class="list" data-comment-section-target = 'list'>
     <% comments.each do |c| %>
       <%= render  'shared/comments', comment: c%>
     <% end %>
+  </div>
 </div>

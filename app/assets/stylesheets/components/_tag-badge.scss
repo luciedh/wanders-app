@@ -10,17 +10,9 @@
   cursor: pointer;
   transition-duration: 0.4s;
   margin: 10px;
-}
-.w-tag-badge-active {
-  width: fit-content;
-  height: auto;
-  background-color: $pink;
-  color: $white;
-  border: solid $pink 2px;
-  border-radius: 25px;
-  font-size: 16px;
-  padding: 0.25em 1em;
-  cursor: pointer;
-  transition-duration: 0.4s;
-  margin: 10px;
+
+  &.active {
+    background-color: $pink;
+    color: $white;
+  }
 }

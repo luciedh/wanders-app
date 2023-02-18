@@ -40,15 +40,7 @@
 /* Trips index style */
 
 .trip-details-container {
-  &.active {
-    .trip-title {
-      background-color: $pink;
-      color: white;
-    }
-    .card-trip {
-      display: flex;
-    }
-  }
+
   .trip-header {
     width: 100%;
     display: flex;
@@ -100,6 +92,16 @@
       margin-bottom: 0;
       margin-top: 8px;
       color: #151468;
+    }
+  }
+
+  &.active {
+    .trip-title {
+      background-color: $pink;
+      color: white;
+    }
+    .card-trip {
+      display: flex;
     }
   }
 }

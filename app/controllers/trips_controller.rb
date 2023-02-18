@@ -14,14 +14,17 @@ class TripsController < ApplicationController
 
 
   def show
-    trip = Trip.find(params[:id])
-    places_of_trip = trip.places.order(:poi_id)
+    @trip = Trip.find(params[:id])
+    places_of_trip = @trip.places.order(:poi_id)
     @markers = places_of_trip.map do |place|
       {
         visited: visited?(place),
         lat: place.geo_lat,
         lng: place.geo_long,
-        info_window_html: render_to_string(partial: "info_window", locals: {place: place, comment: Comment.new, comments: Comment.where(place_id: place.id).order(rating: :desc), users: User.all})
+        info_window_html: render_to_string(partial: "info_window", locals: {place: place,
+                                                                            comment: Comment.new,
+                                                                            comments: Comment.where(place_id: place.id).order(rating: :desc),
+                                                                            users: User.all})
       }
     end
   end

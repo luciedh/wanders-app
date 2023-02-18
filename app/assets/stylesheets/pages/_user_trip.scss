@@ -1,0 +1,38 @@
+.trip-recap {
+  margin-top: 65px;
+  text-align: center;
+  height: 76vh;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  margin-bottom: 25rem;
+  padding: 28px;
+}
+
+.distance-recap {
+  width: 320px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: $white;
+  color: $dark-blue;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.distance-recap {
+  .fa-shoe-prints {
+    font-size: 36px;
+    color: $pink;
+  }
+}
+
+.playlist {
+  margin-top: 36px;
+}
+
+.playlist {
+  h4 {
+    text-align: left;
+  }
+}

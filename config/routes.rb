@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :user_places, only: [:create]
   end
   resources :comments, only: [:update]
-  resources :trips, only: [:index, :show]
+  resources :trips, only: [:index, :show] do
+    resources :user_trips, only: [:create]
+  end
+  resources :user_trips, only: [:index, :show]
   get "search/trip", to: "trips#search_trip", as: :search_trip
 end

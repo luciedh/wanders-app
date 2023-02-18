@@ -14,8 +14,8 @@ class TripsController < ApplicationController
 
 
   def show
-    trip = Trip.find(params[:id])
-    places_of_trip = trip.places.order(:poi_id)
+    @trip = Trip.find(params[:id])
+    places_of_trip = @trip.places.order(:poi_id)
     @markers = places_of_trip.map do |place|
       {
         visited: visited?(place),

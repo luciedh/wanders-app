@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :favourite_places, dependent: :destroy
   has_many :favourite_trips, dependent: :destroy
   has_many :user_trips, dependent: :destroy
+  has_many :trips, through: :user_trips
   has_many :user_places, dependent: :destroy
   has_many :places, through: :user_places
 end

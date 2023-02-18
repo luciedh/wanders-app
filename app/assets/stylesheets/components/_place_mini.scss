@@ -1,0 +1,39 @@
+.place-mini {
+  // background-color: $white;
+  // color: $gray;
+  // border-radius: 15px;
+  overflow-y: overlay;
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.place-mini {
+  img {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .place-mini-img {
+    width: 20%;
+  }
+  .place-mini-info {
+    padding: 5px 5px 0 5px;
+    width: 62%;
+  }
+
+  img, .place-mini-info {
+    background-color: $white;
+    color: $gray;
+    border-radius: 20px;
+  }
+}

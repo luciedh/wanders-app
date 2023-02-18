@@ -73,3 +73,19 @@
   padding-left: 4px;
   padding-right: 4px;
 }
+
+.btn-balade-terminee {
+  display: inline-flex;
+  background-color: $pink;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5vh;
+  padding: 0.5em;
+  text-decoration: none;
+  color: $white;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  bottom: 110px;
+  right: 20px;
+}

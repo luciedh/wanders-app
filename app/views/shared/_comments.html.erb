@@ -1,7 +1,7 @@
 <div class="comment-card">
  <div class="ctn-left">
   <div class="user-avatar">
-    <%= render "shared/avatar", pic: comment.user.profile_pic %>
+    <%= render "shared/avatar", pic: comment.user.profile_pic, class: "avatar-bordered-comment" %>
   </div>
   <div class="comment-rating" data-controller='ratings'
        data-ratings-id-value="<%= comment.id %>">

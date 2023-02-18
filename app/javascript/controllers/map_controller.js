@@ -88,7 +88,6 @@ export default class extends Controller {
   #addPopupToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
-      console.log(marker);
       let myColor = ''
       if (marker.visited === true) {
         myColor = '#4EEBF5';

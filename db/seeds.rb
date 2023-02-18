@@ -55,7 +55,7 @@ Trip.all.each do |trip|
   places_of_trip.each { |place| coord += "#{place.geo_long}%2C#{place.geo_lat}%3B" }
   coord = coord.chomp("%3B")
   route_api = "https://api.mapbox.com/directions/v5/mapbox/walking/#{coord}?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=#{ENV['MAPBOX_API_KEY']}"
-  route_json = URI.parse(route_api).open
+  route_json = URI.open(route_api).read
   route_resp = JSON.parse(route_json)
   trip.kms = (route_resp["routes"][0]["distance"]/1000).round(2)
   trip.duration = route_resp["routes"][0]["duration"]

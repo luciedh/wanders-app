@@ -11,8 +11,13 @@ class CommentsController < ApplicationController
     @comment.place = @place
     @comment.user = current_user
     @comment.rating = 0
-    @comment.save
-    # redirect_to place_path(@place)
+
+
+    respond_to do |format|
+      if @comment.save
+        format.json
+      end
+    end
   end
 
   private

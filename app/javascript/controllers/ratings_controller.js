@@ -14,8 +14,7 @@ export default class extends Controller {
   update(voteCount) {
     const url = `/comments/${this.idValue}`
     const commentData = new FormData()
-    commentData.append("comment[rating]", voteCount)
-    console.log(commentData);
+    commentData.append("comment[rating]", voteCount);
     const options = {
       method: 'PATCH',
       headers: {

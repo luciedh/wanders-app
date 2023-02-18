@@ -20,7 +20,10 @@ class TripsController < ApplicationController
       {
         lat: place.geo_lat,
         lng: place.geo_long,
-        info_window_html: render_to_string(partial: "info_window", locals: {place: place, comment: Comment.new, comments: Comment.where(place_id: place.id).order(rating: :desc), users: User.all})
+        info_window_html: render_to_string(partial: "info_window", locals: {place: place,
+                                                                            comment: Comment.new,
+                                                                            comments: Comment.where(place_id: place.id).order(rating: :desc),
+                                                                            users: User.all})
       }
     end
   end

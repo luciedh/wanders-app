@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Wanders - Partez à la découverte de ce qui vous entoure</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,7 +14,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload", defer: true %>
-    <%= favicon_link_tag asset_path('Wanders.png') %>
+    <%= render 'shared/ios_pwa_links' %>
   </head>
 
   <body>

@@ -1,6 +1,7 @@
 .w-btn-primary {
   display: inline-flex;
   background-color: $pink;
+  border-color: none;
   width: 60%;
   justify-content: center;
   align-items: center;
@@ -8,7 +9,19 @@
   padding: 0.5em;
   text-decoration: none;
   color: $white;
-  transition: all 0.3s ease-in-out;
+}
+
+.w-button {
+  display: inline-flex;
+  background-color: $pink;
+  border-color: none;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5vh;
+  padding: 0.5em;
+  text-decoration: none;
+  color: $white;
 }
 
 .w-btn-primary:hover {
@@ -31,23 +44,29 @@
 .btn-balade {
   display: inline-flex;
   background-color: $pink;
-  width: 60%;
+  width: 130px;
+  height: 130px;
+  font-size: larger;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 2.5vh;
   padding: 0.5em;
   text-decoration: none;
   color: $white;
-  transition: all 0.3s ease-in-out;
   position: fixed;
-  bottom: 110px;
-  right: 20px;
+  bottom: 120px;
+  right: 220px;
 }
 
 .btn-adresse {
   display: inline-flex;
   background-color: $pink;
-  width: 60%;
+  width: 130px;
+  height: 130px;
+  font-size: larger;
+  text-align: center;
   justify-content: center;
   align-items: center;
   border-radius: 2.5vh;
@@ -55,16 +74,18 @@
   text-decoration: none;
   color: $white;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   position: fixed;
-  bottom: 160px;
-  right: 20px;
+  bottom: 120px;
+  right: 50px;
 }
 
 .w-btn-trip {
-  width: fit-content;
   background-color: $pink;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  width: 35%;
   border-radius: 2.5vh;
   padding: 0.5em;
   text-decoration: none;
@@ -76,8 +97,9 @@
 
 .btn-balade-terminee {
   display: inline-flex;
-  background-color: $pink;
-  width: 60%;
+  background-color: $dark-blue;
+  width: 50%;
+  font-size: small;
   justify-content: center;
   align-items: center;
   border-radius: 2.5vh;
@@ -86,6 +108,6 @@
   color: $white;
   transition: all 0.3s ease-in-out;
   position: fixed;
-  bottom: 110px;
+  bottom: 100px;
   right: 20px;
 }

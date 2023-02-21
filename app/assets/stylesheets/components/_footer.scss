@@ -1,17 +1,19 @@
 .w-footer-rectangle {
   padding-top: 12px;
   padding-bottom: 12px;
-  background-color: $blue;
+  background-color: $purple;
   border-radius: 50px;
   a {
     color: white;
     text-decoration: none;
+  }
+  span {
+    font-size: small;
   }
   z-index: 10;
   position: fixed;
   bottom: 0;
   width: 95vw;
   margin-bottom: 1rem;
-  opacity: 92%;
   align-self: center;
 }

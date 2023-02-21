@@ -44,11 +44,11 @@ export default class extends Controller {
 
   colorizeRating() {
     if (parseInt(this.ratingTarget.innerText) > 0) {
-      this.ratingTarget.style.color = '#1EDD88';
+      this.ratingTarget.style.color = '#6adaa8';
     } else if (parseInt(this.ratingTarget.innerText) < 0) {
-      this.ratingTarget.style.color = '#FD1015';
+      this.ratingTarget.style.color = '#e66366';
     } else {
-      this.ratingTarget.style.color = 'black';
+      this.ratingTarget.style.color = '#151468';
     }
   }
 

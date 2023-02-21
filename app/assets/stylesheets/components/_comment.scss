@@ -11,8 +11,17 @@
   justify-content: center;
   width: 80%;
 }
+
+.user-name {
+  margin-left: 8px;
+  color: $dark-blue;
+}
+
 .user-comment {
-  width: 80%;
+  margin-left: 8px;
+  color: $dark-blue;
+  width: 70%;
+  text-align: justify;
 }
 .user-content {
   font-size: 14px;

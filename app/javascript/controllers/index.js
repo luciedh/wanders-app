@@ -13,6 +13,9 @@ application.register("category-selection", CategorySelectionController)
 import CommentSectionController from "./comment_section_controller"
 application.register("comment-section", CommentSectionController)
 
+import DisplayFavDescriptionController from "./display_fav_description_controller"
+application.register("display-fav-description", DisplayFavDescriptionController)
+
 import DisplayTripDetailsController from "./display_trip_details_controller"
 application.register("display-trip-details", DisplayTripDetailsController)
 

@@ -187,10 +187,10 @@ PlaceCategory.create(place_id: 35, category_id: 8)
 puts "Categories and places association completed"
 
 puts "creating favourite places user 1"
-FavouritePlace.create(user_id: 1, place_id: 7)
-FavouritePlace.create(user_id: 1, place_id: 25)
 FavouritePlace.create(user_id: 1, place_id: 1)
-FavouritePlace.create(user_id: 1, place_id: 12)
+FavouritePlace.create(user_id: 1, place_id: 4)
+FavouritePlace.create(user_id: 1, place_id: 18)
+FavouritePlace.create(user_id: 1, place_id: 21)
 puts "favourite places user 1 created"
 
 

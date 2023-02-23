@@ -3,7 +3,7 @@
     <div data-controller="display-trip-details">
       <% @searched_trips.each do |trip| %>
 
-          <div class="trip-details-container" data-action="click->display-trip-details#revealContent">
+          <div class="trip-details-container" data-action="click->display-trip-details#revealContent" data-display-trip-details-target="container">
 
             <div class="trip-header">
               <div>

@@ -2,13 +2,26 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="map"
 export default class extends Controller {
-
   static values = {
     apiKey: String,
     markers: Array
   }
-
   connect() {
+    const getUserLocation = (position) => {
+
+      const el = document.createElement('div')
+      el.classList = "user-marker"
+      el.style.width = '27px';
+      el.style.height = '41px';
+      el.style.backgroundColor = 'rgba(0,0,0,0)';
+      el.insertAdjacentHTML("afterbegin", '<i class="fa-solid fa-person" id="user-icon"></i>');
+
+      new mapboxgl.Marker(el)
+        .setLngLat([position.coords.longitude, position.coords.latitude])
+        .addTo(this.map)
+    }
+    navigator.geolocation.getCurrentPosition(getUserLocation);
+
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -26,7 +39,6 @@ export default class extends Controller {
         this.#colorFirstAndLast()
       }
     })
-
   }
 
   #addMarkersToMap() {

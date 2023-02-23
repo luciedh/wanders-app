@@ -186,13 +186,6 @@ PlaceCategory.create(place_id: 15, category_id: 7)
 PlaceCategory.create(place_id: 35, category_id: 8)
 puts "Categories and places association completed"
 
-puts "creating favourite places user 1"
-FavouritePlace.create(user_id: 1, place_id: 1)
-FavouritePlace.create(user_id: 1, place_id: 4)
-FavouritePlace.create(user_id: 1, place_id: 18)
-FavouritePlace.create(user_id: 1, place_id: 21)
-puts "favourite places user 1 created"
-
 
 puts "creating admin user"
 User.create(
@@ -221,6 +214,13 @@ User.create(
   profile_pic: 'https://media.licdn.com/dms/image/D4E03AQEy_5mTJ7pTVA/profile-displayphoto-shrink_800_800/0/1666077959851?e=1682553600&v=beta&t=ionaX_84UNF60IseeH8vl36R7PkSGKKD8m429pGnMkg'
 )
 puts "creating admin user created"
+
+puts "creating favourite places user 1"
+FavouritePlace.create(user_id: 1, place_id: 1)
+FavouritePlace.create(user_id: 1, place_id: 4)
+FavouritePlace.create(user_id: 1, place_id: 18)
+FavouritePlace.create(user_id: 1, place_id: 21)
+puts "favourite places user 1 created"
 
 puts "creating comments"
 Comment.create(content: "Sous la colonne, érigée au centre de la Place de la Bastille à la mémoire des insurgés des 3 Glorieuses, reposent les restes de 500 combattants de ces événements. Mais pas seulement ! Y reposent aussi des momies rapportées par Bonaparte de son expédition d'Egypte, et qui furent entreposées à cet endroit par erreur.", rating: 0, user_id: 2, place_id: 4)

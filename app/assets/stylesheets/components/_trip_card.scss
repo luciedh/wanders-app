@@ -7,6 +7,10 @@
   overflow-y: overlay;
   overflow-x: hidden;
   margin-bottom: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
 }
 
 /* Trip search style */

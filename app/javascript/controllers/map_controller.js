@@ -8,8 +8,15 @@ export default class extends Controller {
   }
   connect() {
     const getUserLocation = (position) => {
-      console.log(position);
-      new mapboxgl.Marker({color: 'black'})
+
+      const el = document.createElement('div')
+      el.classList = "user-marker"
+      el.style.width = '27px';
+      el.style.height = '41px';
+      el.style.backgroundColor = 'rgba(0,0,0,0)';
+      el.insertAdjacentHTML("afterbegin", '<i class="fa-solid fa-person" id="user-icon"></i>');
+
+      new mapboxgl.Marker(el)
         .setLngLat([position.coords.longitude, position.coords.latitude])
         .addTo(this.map)
     }

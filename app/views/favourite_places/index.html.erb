@@ -1,8 +1,11 @@
 <div class="fav-place-container">
   <h1>Lieux favoris</h1>
   <div data-controller="display-fav-description">
+
     <% @favourite_places.each do |favourite_place| %>
+
       <div class= "fav-place-details-container" data-action="click->display-fav-description#revealContent">
+
         <div class="fav-place-card">
           <%= image_tag favourite_place.place.url_image, alt: "place's image" %>
           <div class="fav-place-info" >
@@ -13,10 +16,14 @@
             </div>
           </div>
         </div>
+
         <div class="place-description" data-display-fav-description-target="description">
           <p><%= favourite_place.place.description %></p>
         </div>
+
       </div>
+
     <% end %>
+
   </div>
 </div>

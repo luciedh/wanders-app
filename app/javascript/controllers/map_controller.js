@@ -8,11 +8,9 @@ export default class extends Controller {
   }
   connect() {
     const getUserLocation = (position) => {
-      console.log(position);
-      const oldMarker = document.getElementsByClassName('user-marker')
-      console.log(oldMarker);
+      const oldMarker = document.getElementByClassName('user-marker')
       if (oldMarker.length === 1){
-        oldMarker.remove()
+        oldMarker.remove();
       }
 
       const el = document.createElement('div')

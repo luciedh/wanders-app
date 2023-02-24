@@ -12,7 +12,7 @@ export default class extends Controller {
       const oldMarker = document.getElementsByClassName('user-marker')
       console.log(oldMarker);
       if (oldMarker.length === 1){
-        document.getElementsByClassName('user-marker').remove()
+        oldMarker.remove()
       }
 
       const el = document.createElement('div')

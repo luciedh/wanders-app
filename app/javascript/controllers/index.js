@@ -19,9 +19,6 @@ application.register("display-fav-description", DisplayFavDescriptionController)
 import DisplayTripDetailsController from "./display_trip_details_controller"
 application.register("display-trip-details", DisplayTripDetailsController)
 
-import GeolocationController from "./geolocation_controller"
-application.register("geolocation", GeolocationController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

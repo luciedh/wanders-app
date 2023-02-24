@@ -3,16 +3,16 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 
-#puts "Clearing seed"
-#User.destroy_all
-#Place.destroy_all
-#Trip.destroy_all
-#TripPlace.destroy_all
-#Category.destroy_all
-#PlaceCategory.destroy_all
-#FavouritePlace.destroy_all
-#Comment.destroy_all
-#puts "Seed cleared"
+puts "Clearing seed"
+User.destroy_all
+Place.destroy_all
+Trip.destroy_all
+TripPlace.destroy_all
+Category.destroy_all
+PlaceCategory.destroy_all
+FavouritePlace.destroy_all
+Comment.destroy_all
+puts "Seed cleared"
 
 # Places
 puts "Creating Places"

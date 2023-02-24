@@ -8,6 +8,12 @@ export default class extends Controller {
   }
   connect() {
     const getUserLocation = (position) => {
+      console.log(position);
+      const oldMarker = document.getElementsByClassName('user-marker')
+      console.log(oldMarker);
+      if (oldMarker.length === 1){
+        document.getElementsByClassName('user-marker').remove()
+      }
 
       const el = document.createElement('div')
       el.classList = "user-marker"
@@ -15,12 +21,11 @@ export default class extends Controller {
       el.style.height = '41px';
       el.style.backgroundColor = 'rgba(0,0,0,0)';
       el.insertAdjacentHTML("afterbegin", '<i class="fa-solid fa-person" id="user-icon"></i>');
-
       new mapboxgl.Marker(el)
         .setLngLat([position.coords.longitude, position.coords.latitude])
         .addTo(this.map)
     }
-    navigator.geolocation.getCurrentPosition(getUserLocation);
+    navigator.geolocation.watchPosition(getUserLocation);
 
     mapboxgl.accessToken = this.apiKeyValue
 

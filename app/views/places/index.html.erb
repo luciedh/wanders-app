@@ -4,5 +4,7 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<%= link_to("Me Balader", search_trip_path, class: "btn-balade") %>
-<%= link_to("Aller à cette adresse", places_path, class: "btn-adresse") %>
+<div class="d-flex justify-content-around button-content">
+  <%= link_to("Me Balader", search_trip_path, class: "btn-balade") %>
+  <%= link_to("Aller à cette adresse", places_path, class: "btn-adresse") %>
+</div>

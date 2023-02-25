@@ -7,6 +7,18 @@
   overflow-y: overlay;
   overflow-x: hidden;
   margin-bottom: 20rem;
+  gap: 16px;
+}
+
+.search-container {
+  background-color: $dark-blue;
+  color: white;
+  padding: 20px;
+  margin-top: 55px;
+  height: 76vh;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  margin-bottom: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

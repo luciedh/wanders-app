@@ -29,7 +29,8 @@
     </div>
     <div class="card-description">
       <%= place.description %>
-
+    </div>
+    <div class="player-audio">
       <% if place.audio_file %>
         <%= audio_tag place.audio_file, controls: true %>
       <% end %>

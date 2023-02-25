@@ -7,4 +7,6 @@ class Place < ApplicationRecord
   has_many :trips, through: :trip_places
   has_many :user_places, dependent: :destroy
   has_many :users, through: :user_places
+
+  #has_one_attached :audio
 end

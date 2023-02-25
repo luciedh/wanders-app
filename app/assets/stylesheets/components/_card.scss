@@ -7,7 +7,6 @@
 
 .card-place {
   img {
-    height: 33%;
     width: 100%;
     object-fit: cover;
     max-height: 260px;
@@ -21,4 +20,23 @@
 
 .card-description {
   color: $gray;
+}
+.comment-cta{
+  border-radius: 50px;
+  background-color: $purple;
+  color: $white;
+  padding: 0.3rem;
+}
+
+#comment_content {
+background-color: $light-gray;
+border-radius: 10px;
+color: $dark-blue;
+}
+
+form label{
+  font-size: medium;
+}
+.place-data button {
+  margin-bottom: 1rem;
 }

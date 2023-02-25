@@ -1,14 +1,29 @@
-<div class="fav_place_container">
+<div class="fav-place-container">
   <h1>Lieux favoris</h1>
-  <% @favourite_places.each do |favourite_place| %>
-    <div class="fav_place_card">
-      <%= image_tag favourite_place.place.url_image, alt: "place's image" %>
-      <div class="fav_place_info">
-        <h2><%= favourite_place.place.name %></h2>
-        <p><%= favourite_place.place.address %></p>
-        <p class="favori_icon"><i class="fa-solid fa-star"></i></p>
-        <p class="visited_icon"><i class="fa-solid fa-circle-check"></i></p>
+  <div data-controller="display-fav-description">
+
+    <% @favourite_places.each do |favourite_place| %>
+
+      <div class= "fav-place-details-container" data-action="click->display-fav-description#revealContent">
+
+        <div class="fav-place-card">
+          <%= image_tag favourite_place.place.url_image, alt: "place's image" %>
+          <div class="fav-place-info" >
+            <h2><%= favourite_place.place.name %></h2>
+            <div class="trip-icon">
+              <p class="favori-icon"><i class="fa-solid fa-star"></i></p>
+              <p class="visited-icon"><i class="fa-solid fa-circle-check"></i></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-description" data-display-fav-description-target="description">
+          <p><%= favourite_place.place.description %></p>
+        </div>
+
       </div>
-    </div>
-  <% end %>
+
+    <% end %>
+
+  </div>
 </div>

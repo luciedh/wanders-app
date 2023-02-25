@@ -1,43 +1,75 @@
-.fav_place_container {
-  margin-top: 80px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
-.fav_place_card {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-  width: 95%;
-  img {
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
-    border-radius: 10px;
+.fav-place-container {
+  margin-top: 80px;
+  padding-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  h1 {
+    margin-bottom: 40px;
+    margin-left: 30px;
   }
-  .fav_place_info {
-    height: 80px;
-    width: 77%;
-    border-radius: 20px;
-    background-color: $white;
-    color: $pink;
-    margin-left: 10px;
-    padding: 5px;
-    h2 {
-      font-weight: bold;
+  .fav-place-details-container {
+    .fav-place-card {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      img {
+        height: 90px;
+        width: 90px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .fav-place-info {
+        height: 90px;
+        width: 70%;
+        border-radius: 20px;
+        background-color: $white;
+        color: $pink;
+        margin-left: 10px;
+        padding: 5px;
+        h2 {
+          font-weight: bold;
+          font-size: small;
+          color: $dark-blue;
+          padding-left: 10px;
+          padding-top: 5px;
+        }
+        .trip-icon {
+          display: flex;
+          .favori-icon {
+            padding-left: 10px;
+            padding-right: 20px;
+            margin-top: 5px;
+            color: rgb(232, 219, 73);
+          }
+          .visited-icon {
+            color: rgb(116, 195, 89);
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    .place-description {
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      text-align: justify;
+      background-color: $white;
+      opacity: 40%;
+      border-radius: 10px;
+      color: $dark-blue;
       font-size: small;
-      color: $dark-blue;
+      width: 90%;
     }
-    p {
-      font-style: italic;
-      font-size: x-small;
-      color: $dark-blue;
-    }
-    .favori_icon {
-      color: rgb(232, 219, 73);
-    }
-    .visited_icon {
-      color: rgb(116, 195, 89);
+    &.active {
+      .place-description {
+        display: flex;
+      }
     }
   }
 }

@@ -7,6 +7,10 @@
   overflow-y: overlay;
   overflow-x: hidden;
   margin-bottom: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
 }
 
 /* Trip search style */
@@ -51,10 +55,10 @@
       border-radius: 50%;
     }
     .trip-title {
-      background-color: white;
+      background-color: $pink;
       width: 80%;
       height: fit-content;
-      color: $pink;
+      color: $white;
       border-radius: 20px;
       padding: 4px;
       margin-right: auto;
@@ -97,8 +101,8 @@
 
   &.active {
     .trip-title {
-      background-color: $pink;
-      color: white;
+      background-color: $white;
+      color: $pink;
     }
     .card-trip {
       display: flex;

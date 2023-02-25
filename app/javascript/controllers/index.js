@@ -27,3 +27,6 @@ application.register("map", MapController)
 
 import RatingsController from "./ratings_controller"
 application.register("ratings", RatingsController)
+
+import UserPlaceController from "./user_place_controller"
+application.register("user-place", UserPlaceController)

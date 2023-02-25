@@ -15,6 +15,10 @@
     </div>
     <div class="card-description">
       <%= place.description %>
+
+      <% if place.audio_file %>
+        <%= audio_tag place.audio_file, controls: true %>
+      <% end %>
     </div>
   </div>
    <i class="fa-solid fa-plus comment-cta"

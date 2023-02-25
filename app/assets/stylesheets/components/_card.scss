@@ -52,6 +52,7 @@ form label{
   font-size: 1.5em;
   margin-top: 0.4em;
   margin-left: 2em;
+  z-index: 2;
 }
  #flexSwitchCheckDefault {
   width: 4em;
@@ -76,4 +77,5 @@ form label{
 .transparent-button {
   background-color: $white;
   border: none;
+  z-index: 1;
 }

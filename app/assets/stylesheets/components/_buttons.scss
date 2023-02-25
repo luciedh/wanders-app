@@ -43,11 +43,19 @@
   color: $pink;
 }
 
+.button-content {
+  position: fixed;
+  bottom: 0;
+  width: 95vw;
+  margin-bottom: 6rem;
+  margin-left: 9px;
+}
+
 .btn-balade {
   display: inline-flex;
   background-color: $pink;
-  width: 130px;
-  height: 130px;
+  width: 170px;
+  height: 60px;
   font-size: larger;
   text-align: center;
   justify-content: center;
@@ -57,16 +65,16 @@
   padding: 0.5em;
   text-decoration: none;
   color: $white;
-  position: fixed;
-  bottom: 120px;
-  right: 220px;
+  // position: fixed;
+  // bottom: 120px;
+  // right: 220px;
 }
 
 .btn-adresse {
   display: inline-flex;
   background-color: $pink;
-  width: 130px;
-  height: 130px;
+  width: 170px;
+  height: 60px;
   font-size: larger;
   text-align: center;
   justify-content: center;
@@ -77,9 +85,9 @@
   color: $white;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  bottom: 120px;
-  right: 50px;
+  // position: fixed;
+  // bottom: 120px;
+  // right: 50px;
 }
 
 .w-btn-trip {

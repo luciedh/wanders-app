@@ -13,5 +13,17 @@
       <h4>Favoris</h4>
       <i class="fa-solid fa-plus"></i>
     </div>
+    <div class="section">
+    <%= @user.favourite_places.each do |fav| %>
+      <div class="place-mini">
+        <div class="place-mini-img">
+          <%= image_tag fav.url_image, alt: "place image" %>
+        </div>
+        <div class="place-mini-info">
+          <h3><%= fav.name %></h3>
+          <p><%= fav.address %></p>
+        </div>
+    <% end %>
+    </div>
   </div>
 </div>

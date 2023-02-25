@@ -7,7 +7,9 @@
       <div class= "fav-place-details-container" data-action="click->display-fav-description#revealContent">
 
         <div class="fav-place-card">
+        <div class="image">
           <%= image_tag favourite_place.place.url_image, alt: "place's image" %>
+          </div>
           <div class="fav-place-info" >
             <h2><%= favourite_place.place.name %></h2>
             <div class="trip-icon">

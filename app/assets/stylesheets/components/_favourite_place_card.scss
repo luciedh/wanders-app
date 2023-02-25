@@ -16,21 +16,29 @@
       width: 90%;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 20px;
-      img {
-        height: 90px;
-        width: 90px;
-        object-fit: cover;
+      .image {
+        height: 5.5rem;
+        width: 5.5rem;
+        z-index: 2;
         border-radius: 10px;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
       }
       .fav-place-info {
-        height: 90px;
-        width: 70%;
-        border-radius: 20px;
-        background-color: $white;
-        color: $pink;
-        margin-left: 10px;
-        padding: 5px;
+        height: 5.5rem;
+        border-radius: 10px;
+        background-color: #FFF;
+        color: #FD479E;
+        margin-left: -2rem;
+        padding: 0.5rem 1rem;
+        padding-left: 3rem;
+        flex-grow: 1;
+
         h2 {
           font-weight: bold;
           font-size: small;
@@ -59,12 +67,13 @@
       margin-right: auto;
       padding: 20px;
       text-align: justify;
-      background-color: $white;
-      opacity: 40%;
+      background-color: #7372A4;
       border-radius: 10px;
-      color: $dark-blue;
+      color: $white;
       font-size: small;
       width: 90%;
+      padding-top: 2rem;
+      margin-top: -1rem;
     }
     &.active {
       .place-description {

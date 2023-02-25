@@ -4,7 +4,8 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+    home: { type: Boolean, default: false }
   }
   connect() {
     const getUserLocation = (position) => {
@@ -33,7 +34,11 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
-    this.#addMarkersToMap()
+    global.map = this.map
+
+    if (this.homeValue) {
+      this.#addMarkersToMap()
+    }
     this.#fitMapToMarkers()
 
     this.map.on('load', () => {
@@ -46,7 +51,7 @@ export default class extends Controller {
   }
 
   #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
+    this.markersValue.slice(1,-2).forEach((marker) => {
       new mapboxgl.Marker({color: '#151468'})
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(this.map)
@@ -102,7 +107,7 @@ export default class extends Controller {
   }
 
   #addPopupToMap() {
-    this.markersValue.forEach((marker) => {
+    this.markersValue.slice(1,-2).forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
       let myColor = ''
       if (marker.visited === true) {
@@ -117,19 +122,57 @@ export default class extends Controller {
     });
   }
 
+  // #colorFirstAndLast () {
+  //   const marker_first = this.markersValue[0]
+  //   const popup_first = new mapboxgl.Popup().setHTML(marker_first.info_window_html)
+  //   new mapboxgl.Marker({color: '#1EDD88'})
+  //     .setLngLat([ marker_first.lng, marker_first.lat ])
+  //     .setPopup(popup_first)
+  //     .addTo(this.map)
+
+  //   const marker_last = this.markersValue.pop();
+  //   const popup_last = new mapboxgl.Popup().setHTML(marker_last.info_window_html)
+  //   new mapboxgl.Marker({color: '#FD479E'})
+  //     .setLngLat([ marker_last.lng, marker_last.lat ])
+  //     .setPopup(popup_last)
+  //     .addTo(this.map)
+  // }
+
   #colorFirstAndLast () {
     const marker_first = this.markersValue[0]
     const popup_first = new mapboxgl.Popup().setHTML(marker_first.info_window_html)
-    new mapboxgl.Marker({color: '#1EDD88'})
+    const el = document.createElement('i');
+    el.className = "fa-solid fa-map-pin";
+    el.style.fontSize = "30px";
+    if (marker_first.visited === true) {
+      el.style.color = '#4EEBF5';
+    } else {
+      el.style.color = "#151468";
+    }
+    el.style.backgroundSize = '100%';
+
+    new mapboxgl.Marker(el)
       .setLngLat([ marker_first.lng, marker_first.lat ])
       .setPopup(popup_first)
       .addTo(this.map)
 
+
     const marker_last = this.markersValue.pop();
     const popup_last = new mapboxgl.Popup().setHTML(marker_last.info_window_html)
-    new mapboxgl.Marker({color: '#FD479E'})
+    const el_finish = document.createElement('i');
+    el_finish.className = "fa-solid fa-flag";
+    el_finish.style.fontSize = "30px";
+    if (marker_last.visited === true) {
+      el_finish.style.color = '#4EEBF5';
+    } else {
+      el_finish.style.color = "#151468";
+    }
+    el_finish.style.backgroundSize = '100%';
+
+    new mapboxgl.Marker(el_finish)
       .setLngLat([ marker_last.lng, marker_last.lat ])
       .setPopup(popup_last)
       .addTo(this.map)
+
   }
 }

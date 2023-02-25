@@ -1,25 +1,37 @@
 <div class="trip-recap">
 <h2>Résumé de la balade</h2>
-  <div class="distance-recap center">
-    <span class="fa-solid fa-shoe-prints"></span>
-    <h2><%= @user_trip.trip.kms %> km !</h2>
+  <div class="distance-recap">
+    <div class="d-flex justify-content-around">
+      <div class="distance">
+        <i class="fa-solid fa-shoe-prints"></i><br>
+        <h4><%= @user_trip.trip.kms %> km</h4>
+      </div>
+      <div class="places-recap">
+        <i class="fa-solid fa-location-dot"></i><br>
+        <h4><%= "#{@user_places.length}" %></h4>
+      </div>
+    </div>
   </div>
   <div class="playlist">
     <h4>Tes étapes du jour</h3>
-    <% @user_trip.trip.places.each do |place| %>
+    <% @user_places.each do |place| %>
       <div class="place-mini">
         <div class="place-mini-img">
           <%= image_tag place.url_image, alt: "place image" %>
         </div>
-        <div class="place-mini-info">
+        <div class="place-mini-info position-relative">
+            <% if !current_user.favourites.include?(place) %>
+              <div class="text-right position-absolute star-regular">
+                <i class="fa-regular fa-star" data-add-favourite-target="icon" data-place="<%= place.id %>" data-user="<%= current_user.id %>" data-controller="add-favourite" data-action="click->add-favourite#changeIcon"></i>
+              </div>
+            <% else %>
+              <div class="text-right position-absolute star-solid">
+                <% favourite_id = @favourite_places.find_by(user_id: current_user.id, place_id: place.id).id %>
+                <i class="fa-solid fa-star" data-add-favourite-target="icon" data-place="<%= place.id %>" data-user="<%= current_user.id %>"  data-favid="<%= favourite_id.to_s %>" data-controller="add-favourite" data-action="click->add-favourite#changeIcon"></i>
+              </div>
+            <% end %>
           <h3><%= place.name %></h3>
           <p><%= place.address %></p>
-          <% if !current_user.favourites.include?(place) %>
-            <i class="fa-regular fa-star" data-add-favourite-target="icon" data-place="<%= place.id %>" data-user="<%= current_user.id %>" data-controller="add-favourite" data-action="click->add-favourite#changeIcon"></i>
-          <% else %>
-            <% favourite_id = @favourite_places.find_by(user_id: current_user.id, place_id: place.id).id %>
-            <i class="fa-solid fa-star" data-add-favourite-target="icon" data-place="<%= place.id %>" data-user="<%= current_user.id %>"  data-favid="<%= favourite_id.to_s %>" data-controller="add-favourite" data-action="click->add-favourite#changeIcon"></i>
-          <% end %>
         </div>
       </div>
     <% end %>

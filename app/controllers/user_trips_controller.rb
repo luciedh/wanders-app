@@ -11,6 +11,13 @@ class UserTripsController < ApplicationController
 
   def show
     @user_trip = UserTrip.find(params[:id])
+    @user_places = @user_trip.trip.places.select { |place| visited?(place) }
     @favourite_places = FavouritePlace.all
+  end
+
+  private
+
+  def visited?(place)
+    !place.user_places.where(user_id: current_user).empty?
   end
 end

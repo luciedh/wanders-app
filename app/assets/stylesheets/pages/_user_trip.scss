@@ -10,20 +10,28 @@
 
 .distance-recap {
   width: 320px;
-  height: 60px;
+  height: 85px;
   border-radius: 15px;
-  background-color: $white;
-  color: $dark-blue;
+  background-color: none;
+  color: #FFF;
   padding: 10px;
-  display: flex;
-  justify-content: space-evenly;
+  // display: flex;
+  // justify-content: space-evenly;
   margin: auto;
 }
 
 .distance-recap {
+  .fa-shoe-prints, .fa-shoe-prints {
+    margin-bottom: 12px;
+  }
   .fa-shoe-prints {
-    font-size: 36px;
+    font-size: 28px;
     color: $pink;
+  }
+
+  .fa-location-dot {
+    color: $blue;
+    font-size: 32px;
   }
 }
 
@@ -32,7 +40,15 @@
 }
 
 .playlist {
-  h4 {
-    text-align: left;
+  h3 {
+    margin-top: 18px;
+  }
+  .star-regular {
+    top: 25px;
+    right: 25px;
+  }
+  .star-solid {
+    top: 35px;
+    right: 25px;
   }
 }

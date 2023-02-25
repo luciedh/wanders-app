@@ -40,7 +40,15 @@
 }
 
 .playlist {
-  h4 {
-    text-align: left;
+  h3 {
+    margin-top: 18px;
+  }
+  .star-regular {
+    top: 25px;
+    right: 25px;
+  }
+  .star-solid {
+    top: 35px;
+    right: 25px;
   }
 }

@@ -19,15 +19,19 @@
         <div class="place-mini-img">
           <%= image_tag place.url_image, alt: "place image" %>
         </div>
-        <div class="place-mini-info">
+        <div class="place-mini-info position-relative">
+            <% if !current_user.favourites.include?(place) %>
+              <div class="text-right position-absolute star-regular">
+                <i class="fa-regular fa-star" data-add-favourite-target="icon" data-place="<%= place.id %>" data-user="<%= current_user.id %>" data-controller="add-favourite" data-action="click->add-favourite#changeIcon"></i>
+              </div>
+            <% else %>
+              <div class="text-right position-absolute star-solid">
+                <% favourite_id = @favourite_places.find_by(user_id: current_user.id, place_id: place.id).id %>
+                <i class="fa-solid fa-star" data-add-favourite-target="icon" data-place="<%= place.id %>" data-user="<%= current_user.id %>"  data-favid="<%= favourite_id.to_s %>" data-controller="add-favourite" data-action="click->add-favourite#changeIcon"></i>
+              </div>
+            <% end %>
           <h3><%= place.name %></h3>
           <p><%= place.address %></p>
-          <% if !current_user.favourites.include?(place) %>
-            <i class="fa-regular fa-star" data-add-favourite-target="icon" data-place="<%= place.id %>" data-user="<%= current_user.id %>" data-controller="add-favourite" data-action="click->add-favourite#changeIcon"></i>
-          <% else %>
-            <% favourite_id = @favourite_places.find_by(user_id: current_user.id, place_id: place.id).id %>
-            <i class="fa-solid fa-star" data-add-favourite-target="icon" data-place="<%= place.id %>" data-user="<%= current_user.id %>"  data-favid="<%= favourite_id.to_s %>" data-controller="add-favourite" data-action="click->add-favourite#changeIcon"></i>
-          <% end %>
         </div>
       </div>
     <% end %>

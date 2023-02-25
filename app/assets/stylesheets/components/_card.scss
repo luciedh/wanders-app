@@ -40,3 +40,35 @@ form label{
 .place-data button {
   margin-bottom: 1rem;
 }
+.visited-area {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em 1em 1em;
+}
+
+#visited-label{
+  font-size: 1.5em;
+  margin-top: 0.4em;
+  margin-left: 2em;
+}
+ #flexSwitchCheckDefault {
+  width: 4em;
+  height: 2em;
+  background-color: $white;
+  box-shadow: none;
+ }
+ #flexSwitchCheckDefault:checked {
+  background-color: #4EEBF5;
+  border-color: #4EEBF5;
+  box-shadow: none;
+}
+ #flexSwitchCheckDefault:active {
+  background-color: #4EEBF5;
+  box-shadow: none;
+}
+ #flexSwitchCheckDefault:focus {
+  box-shadow: none;
+  outline: 0;
+}

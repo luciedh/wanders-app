@@ -11,5 +11,6 @@ class UserTripsController < ApplicationController
 
   def show
     @user_trip = UserTrip.find(params[:id])
+    @favourite_places = FavouritePlace.all
   end
 end

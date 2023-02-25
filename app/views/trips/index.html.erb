@@ -11,14 +11,24 @@
               </div>
               <div class="trip-title">
                 <p class="title"><%= trip.name %></p>
-                <p class="description">Départ: <%= trip.places.first.address %> | Durée: <%= trip.duration %> mn</p>
+                <div class="description-container">
+                  <p class="duration"><i class="fa-solid fa-clock"></i> <br> <%= trip.duration %> mn</p>
+                  <p class="start"><i class="fa-solid fa-flag-checkered"></i> <br> <%= trip.places.first.address %></p>
+                </div>
               </div>
             </div>
 
             <div class="card-trip" data-display-trip-details-target="info">
-              <p class="key-figures"><i class="fa-solid fa-location-dot"></i>     <%= trip.places.count %> </p>
-              <span class="w-tag-badge"><%= trip.category %></span>
-              <%= link_to("C'est parti", trip_path(trip), class: "w-btn-trip") %>
+                <div>
+                  <p class="key-icon"><i class="fa-solid fa-location-dot"></i></p>
+                </div>
+                <div>
+                  <p class="key-figures"><%= trip.places.count %> </p>
+                </div>
+                <div class="card-badges">
+                  <span class="w-tag-badge-trip"><%= trip.category %></span>
+                  <%= link_to("C'est parti !", trip_path(trip), class: "w-btn-trip") %>
+                </div>
             </div>
 
           </div>

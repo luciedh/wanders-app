@@ -59,10 +59,9 @@
       margin-right: auto;
       padding: 20px;
       text-align: justify;
-      background-color: $white;
-      opacity: 40%;
+      background-color: rgba($color: #ffffff, $alpha: 0.3);
       border-radius: 10px;
-      color: $dark-blue;
+      color: $white;
       font-size: small;
       width: 90%;
     }

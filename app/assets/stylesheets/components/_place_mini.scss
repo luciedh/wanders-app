@@ -10,6 +10,8 @@
 }
 
 .place-mini {
+  height: 120px;
+
   img {
     height: 120px;
     width: 120px;
@@ -21,6 +23,7 @@
   }
   p {
     font-size: 14px;
+    margin-bottom: 0;
   }
 
   .place-mini-img {
@@ -29,11 +32,23 @@
   .place-mini-info {
     padding: 5px 5px 0 5px;
     width: 62%;
+    position: relative;
   }
 
   img, .place-mini-info {
     background-color: $white;
     color: $gray;
     border-radius: 20px;
+  }
+
+  .fa-star {
+    color: rgb(232, 219, 73);
+    font-size: 16px;
+    position: absolute !important;
+    bottom: 5px !important;
+  }
+
+  .fa-solid.fa-star {
+    font-size: 16px !important;
   }
 }

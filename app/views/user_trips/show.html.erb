@@ -1,12 +1,20 @@
 <div class="trip-recap">
 <h2>Résumé de la balade</h2>
-  <div class="distance-recap center">
-    <span class="fa-solid fa-shoe-prints"></span>
-    <h2><%= @user_trip.trip.kms %> km !</h2>
+  <div class="distance-recap">
+    <div class="d-flex justify-content-around">
+      <div class="distance">
+        <i class="fa-solid fa-shoe-prints"></i><br>
+        <h4><%= @user_trip.trip.kms %> km</h4>
+      </div>
+      <div class="places-recap">
+        <i class="fa-solid fa-location-dot"></i><br>
+        <h4><%= "#{@user_places.length}" %></h4>
+      </div>
+    </div>
   </div>
   <div class="playlist">
     <h4>Tes étapes du jour</h3>
-    <% @user_trip.trip.places.each do |place| %>
+    <% @user_places.each do |place| %>
       <div class="place-mini">
         <div class="place-mini-img">
           <%= image_tag place.url_image, alt: "place image" %>

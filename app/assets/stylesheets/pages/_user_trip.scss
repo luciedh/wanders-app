@@ -15,16 +15,23 @@
   background-color: $white;
   color: $dark-blue;
   padding: 10px;
-  display: flex;
-  justify-content: space-evenly;
+  // display: flex;
+  // justify-content: space-evenly;
   margin: auto;
 }
 
 .distance-recap {
+  .fa-shoe-prints, .fa-shoe-prints {
+    margin-bottom: 12px;
+  }
   .fa-shoe-prints {
-    font-size: 36px;
+    font-size: 28px;
     color: $pink;
-    margin-top: 15px;
+  }
+
+  .fa-location-dot {
+    color: $blue;
+    font-size: 32px;
   }
 }
 

@@ -1,10 +1,15 @@
 <div class="trip-recap">
 <h2>Résumé de la balade</h2>
-  <div class="distance-recap center">
-    <span class="fa-solid fa-shoe-prints"></span>
-    <div class="row">
-      <h4><%= @user_trip.trip.kms %> km parcourus</h4>
-      <h4><%= "#{@user_places.length}" %> lieux visités</h4>
+  <div class="distance-recap">
+    <div class="d-flex justify-content-around">
+      <div class="distance">
+        <i class="fa-solid fa-shoe-prints"></i><br>
+        <h4><%= @user_trip.trip.kms %> km</h4>
+      </div>
+      <div class="places-recap">
+        <i class="fa-solid fa-location-dot"></i><br>
+        <h4><%= "#{@user_places.length}" %></h4>
+      </div>
     </div>
   </div>
   <div class="playlist">

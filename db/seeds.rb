@@ -4,7 +4,6 @@
 #
 require "open-uri"
 
-
 puts "Clearing seed"
 User.destroy_all
 Place.destroy_all

@@ -87,14 +87,14 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 35%;
+  font-size: small;
+  width: fit-content;
   border-radius: 2.5vh;
   padding: 0.5em;
   text-decoration: none;
   color: $white;
   transition: all 0.3s ease-in-out;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 0.25em 1em;
 }
 
 .btn-balade-terminee {

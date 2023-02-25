@@ -1,0 +1,17 @@
+<div class="container user-infos-container">
+  <div class="container user-infos d-flex">
+    <div class="container-left">
+      <%= render "shared/avatar", pic: @user.profile_pic, class: "avatar-bordered-comment" %>
+    </div>
+    <div class="container-right">
+      <h4><%= @user.username %></h4>
+      <p>Inscrit depuis le <%= @user.created_at%></p>
+    </div>
+  </div>
+  <div class="user-favorites">
+    <div class="section-title">
+      <h4>Favoris</h4>
+      <i class="fa-solid fa-plus"></i>
+    </div>
+  </div>
+</div>

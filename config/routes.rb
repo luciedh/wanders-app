@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   get 'comments/new'
   get 'comments/create'
   devise_for :users
@@ -14,4 +15,5 @@ Rails.application.routes.draw do
   end
   resources :user_trips, only: [:index, :show]
   get "search/trip", to: "trips#search_trip", as: :search_trip
+  resources :users, only: [:show]
 end

@@ -34,6 +34,11 @@
 .mapboxgl-popup-close-button {
   color: #3698B1;
   font-size: 36px;
+  background-color: rgba(255, 255,255, 0.6) !important;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  margin: 9px;
 }
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {

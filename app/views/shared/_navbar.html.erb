@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <%= image_tag 'Wanders.png', class: "nav-logo" %>
     <% if user_signed_in? %>
-      <%= image_tag current_user.profile_pic, class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <%= image_tag attachment_safe_url(current_user.profile_pic), class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <%= link_to "Mon profil", "#", class: "dropdown-item" %>
         <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>

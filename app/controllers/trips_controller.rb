@@ -21,16 +21,24 @@ class TripsController < ApplicationController
         visited: visited?(place),
         lat: place.geo_lat,
         lng: place.geo_long,
-        info_window_html: render_to_string(partial: "info_window", locals: {place: place,
-                                                                            comment: Comment.new,
-                                                                            comments: Comment.where(place_id: place.id).order(rating: :desc),
-                                                                            users: User.all})
+        info_window_html: render_to_string(
+          partial: "info_window",
+          locals: {
+            place: place,
+            comment: Comment.new,
+            comments: place.comments.order(rating: :desc),
+            users: User.all,
+            trip: @trip
+          }
+        )
       }
     end
   end
 
   private
+
   def visited?(place)
-    !place.user_places.where(user_id: current_user).empty?
+    current_user.places.include?(place)
+    # !place.user_places.where(user_id: current_user).empty?
   end
 end

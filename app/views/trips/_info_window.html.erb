@@ -1,4 +1,4 @@
-<div class="card-place" data-controller='comment-section'>
+<div class="card-place" data-controller='comment-section user-place'>
   <% if place.url_image %>
     <%= image_tag place.url_image, alt: "place's image" %>
   <% end %>
@@ -12,7 +12,13 @@
         <% end %>
       </p>
       <div class="visited-area">
-        <%= button_to place_user_places_path(place), data: { turbo_method: :post }, class: "transparent-button" do %>
+        <%= button_to place_user_places_path(place),
+                      data: {
+                        turbo_method: :post ,
+                        action: "click->user-place#create",
+                        trip_id: @trip.id
+                      },
+                      class: "transparent-button" do %>
           <div class="form-check form-switch">
             <label class="form-check-label" for="flexSwitchCheckDefault" id="visited-label">Visité</label>
             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -22,7 +28,8 @@
     </div>
     <div class="card-description">
       <%= place.description %>
-
+    </div>
+    <div class="player-audio">
       <% if place.audio_file %>
         <%= audio_tag place.audio_file, controls: true %>
       <% end %>

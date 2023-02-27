@@ -7,6 +7,18 @@
   overflow-y: overlay;
   overflow-x: hidden;
   margin-bottom: 20rem;
+  gap: 16px;
+}
+
+.search-container {
+  background-color: $dark-blue;
+  color: white;
+  padding: 20px;
+  margin-top: 55px;
+  height: 76vh;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  margin-bottom: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,54 +67,94 @@
       border-radius: 50%;
     }
     .trip-title {
-      background-color: $pink;
+      background-color: $white;
       width: 80%;
       height: fit-content;
-      color: $white;
+      color: $dark-blue;
       border-radius: 20px;
       padding: 4px;
       margin-right: auto;
       margin-left: auto;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       .title {
         text-align: center;
         font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 30px;
       }
-      .description {
-        font-style: italic;
-        text-align: center;
-        font-size: smaller;
+      .description-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        .duration {
+          font-style: italic;
+          text-align: center;
+          font-size: smaller;
+          width: 30%;
+          i {
+            font-size: xx-large;
+          }
+        }
+        .start {
+          font-style: italic;
+          text-align: center;
+          font-size: smaller;
+          width: 60%;
+          i {
+            font-size: xx-large;
+          }
+        }
       }
     }
   }
 
   .card-trip {
     overflow: hidden;
-    height: 70px;
-    width: 100%;
+    width: 80%;
     padding: 16px;
-    background-color: white;
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
     border-radius: 20px;
     display: none;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: -20px;
     margin-bottom: 20px;
-    margin-right: auto;
+    margin-right: 3%;
     margin-left: auto;
+    gap: 5px;
     .key-figures {
       font-size: 20px;
-      font-weight: bold;
-      line-height: 1.4;
-      margin-bottom: 0;
-      margin-top: 8px;
-      color: #151468;
+      color: $white;
+      background-color: $dark-blue;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+    .key-icon {
+      font-size: large !important;
+      color: $dark-blue;
+      background-color: $white;
+      border-radius: 50%;
+      border-color: $dark-blue;
+      border-width: 3px;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+    .card-badges {
+      display: flex;
+      flex-direction: column;
+      justify-items: right;
     }
   }
 
   &.active {
     .trip-title {
-      background-color: $white;
-      color: $pink;
+      background-color: $pink;
+      color: $white;
     }
     .card-trip {
       display: flex;

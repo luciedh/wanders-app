@@ -10,6 +10,8 @@
     width: 100%;
     object-fit: cover;
     max-height: 260px;
+    margin-top: -10px;
+    border-radius: 15px;
   }
 
   h2 {
@@ -25,7 +27,7 @@
   border-radius: 50px;
   background-color: $purple;
   color: $white;
-  padding: 0.3rem;
+  padding: 0.3rem 0.4rem;
 }
 
 #comment_content {

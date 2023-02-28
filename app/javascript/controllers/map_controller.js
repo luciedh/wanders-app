@@ -12,10 +12,10 @@ export default class extends Controller {
       const oldMarker = document.getElementsByClassName('user-marker')
       console.log(oldMarker);
       if (oldMarker.length === 1){
-        oldMarker[0].remove();
+        oldMarker[0].remove(); // Remove si il y'a deja un marker
       }
 
-      const el = document.createElement('div')
+      const el = document.createElement('div')// je créée un marker en fonction des coordonnées récupérées par le navigator.geolocation.watchPosition
       el.classList = "user-marker"
       el.style.width = '27px';
       el.style.height = '41px';

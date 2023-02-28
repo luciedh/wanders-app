@@ -68,14 +68,15 @@ export default class extends Controller {
     const el = document.createElement('i');
     if (position == "first") {
       el.className = "fa-solid fa-map-pin";
+      el.style.fontSize = "46px";
     } else {
       el.className = "fa-solid fa-flag";
+      el.style.fontSize = "40px";
     }
-    el.style.fontSize = "30px";
     el.style.color = "#4EEBF5";
     el.style.backgroundSize = '100%';
 
-    new mapboxgl.Marker(el)
+    new mapboxgl.Marker(el, {anchor: "bottom"})
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(this.map)

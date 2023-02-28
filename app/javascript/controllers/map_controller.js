@@ -12,10 +12,10 @@ export default class extends Controller {
       const oldMarker = document.getElementsByClassName('user-marker')
       console.log(oldMarker);
       if (oldMarker.length === 1){
-        oldMarker[0].remove();
+        oldMarker[0].remove(); // Remove si il y'a deja un marker
       }
 
-      const el = document.createElement('div')
+      const el = document.createElement('div')// je créée un marker en fonction des coordonnées récupérées par le navigator.geolocation.watchPosition
       el.classList = "user-marker"
       el.style.width = '27px';
       el.style.height = '41px';
@@ -143,7 +143,7 @@ export default class extends Controller {
     const popup_first = new mapboxgl.Popup().setHTML(marker_first.info_window_html)
     const el = document.createElement('i');
     el.className = "fa-solid fa-map-pin";
-    el.style.fontSize = "30px";
+    el.style.fontSize = "46px";
     if (marker_first.visited === true) {
       el.style.color = '#4EEBF5';
     } else {
@@ -151,7 +151,7 @@ export default class extends Controller {
     }
     el.style.backgroundSize = '100%';
 
-    new mapboxgl.Marker(el)
+    new mapboxgl.Marker(el, {anchor: "bottom"})
       .setLngLat([ marker_first.lng, marker_first.lat ])
       .setPopup(popup_first)
       .addTo(this.map)
@@ -161,7 +161,7 @@ export default class extends Controller {
     const popup_last = new mapboxgl.Popup().setHTML(marker_last.info_window_html)
     const el_finish = document.createElement('i');
     el_finish.className = "fa-solid fa-flag";
-    el_finish.style.fontSize = "30px";
+    el_finish.style.fontSize = "40px";
     if (marker_last.visited === true) {
       el_finish.style.color = '#4EEBF5';
     } else {

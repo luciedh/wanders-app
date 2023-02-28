@@ -75,6 +75,45 @@ Place.create(address: "rue du Faubourg Saint Antoine, 75011, Paris", geo_lat: 48
 Place.create(address: "Brasserie le Centenaire, rue Amelot, 75011, Paris", geo_lat: 48.8651735198277, geo_long: 2.36687779585479, name: "Comme un arbre dans la ville", description: "A l'angle de la rue Amelot et de la rue Oberkampf, si vous regardez la brasserie Le Centenaire, vous découvrirez avec surprise ... un frêne qui semble sortir de la terrasse ! L'effet est vraiment surprenant, et le nom de la brasserie n'a rien à voir avec l'âge de l'arbre... Il rappelle que la boutique fut fondée 100 ans pile-poil après la Révolution, en 1889. ", url_image: "https://tse2.mm.bing.net/th?id=OIP.zvDtgolvEc0kepsH1cfRSwHaE4&pid=Api&P=0")
 puts "Places created"
 
+puts "creating fake places"
+Place.create(geo_lat: 48.87133054368468, geo_long:2.3896323556303605)
+Place.create(geo_lat: 48.87404032592636, geo_long:2.3807059638113484)
+Place.create(geo_lat: 48.87144345420837, geo_long:2.3903190011548996)
+Place.create(geo_lat: 48.86534592129362, geo_long:2.386714112151068)
+Place.create(geo_lat: 48.87488710277784, geo_long:2.3595916139317623)
+Place.create(geo_lat: 48.87799182860893, geo_long:2.374869476852764)
+Place.create(geo_lat: 48.87550806335967, geo_long:2.3876582497473096)
+Place.create(geo_lat: 48.86574115427949, geo_long:2.390576493226602)
+Place.create(geo_lat: 48.869411025795955, geo_long:2.3959838267323494)
+Place.create(geo_lat: 48.86557176909632, geo_long:2.3841391914340453)
+Place.create(geo_lat: 48.884990867376466, geo_long:2.3807059637988037)
+Place.create(geo_lat: 48.8852915265322, geo_long:2.386892554638125)
+Place.create(geo_lat: 48.88646127073432, geo_long:2.3588746635162106)
+Place.create(geo_lat: 48.88646127073432, geo_long:2.353537922350131)
+Place.create(geo_lat: 48.85662424570589, geo_long:2.356917858593154)
+Place.create(geo_lat: 48.85340546439665, geo_long:2.359497283490092)
+Place.create(geo_lat: 48.86288564548685, geo_long:2.356295238790445)
+Place.create(geo_lat: 48.865460199436754, geo_long:2.3547831621267226)
+Place.create(geo_lat: 48.866805936290014, geo_long:2.3570957499653566)
+Place.create(geo_lat: 48.870140867296534, geo_long:2.3584299352568765)
+Place.create(geo_lat: 48.87218852180872, geo_long:2.3572736413375592)
+Place.create(geo_lat: 48.868502683348886, geo_long:2.3524705742880885)
+Place.create(geo_lat: 48.870959939157686, geo_long:2.3600309576067)
+Place.create(geo_lat: 48.87447009526426, geo_long:2.3615430342704222)
+Place.create(geo_lat: 48.88598611635781, geo_long:2.3814322322039323)
+Place.create(geo_lat: 48.84602921243071, geo_long:2.3696441830137354)
+Place.create(geo_lat: 48.891476350171054, geo_long:2.3896183774749025)
+Place.create(geo_lat: 48.89621253824898, geo_long:2.3648962187406184)
+Place.create(geo_lat: 48.893413935982586, geo_long:2.377830328268751)
+Place.create(geo_lat: 48.879849259450545, geo_long:2.354581675699196)
+Place.create(geo_lat: 48.88458654873474, geo_long:2.3509797717799694)
+Place.create(geo_lat: 48.88717033558121, geo_long:2.3550728444154543)
+Place.create(geo_lat: 48.88394058116369, geo_long:2.355564013131713)
+Place.create(geo_lat: 48.85895676899874, geo_long:2.404680884669791)
+Place.create(geo_lat: 48.846891153173054, geo_long:2.409101403116115)
+Place.create(geo_lat: 48.86886563534778, geo_long:2.35294444655726)
+
+puts "fake places created"
 # Attach audio
 
 
@@ -200,7 +239,7 @@ puts "creating admin user"
 User.create(
   # first_name: 'admin',
   # last_name: 'admin',
-  # username: 'admin',
+  username: 'Bea',
   email: 'admin@admin.com',
   password: 'adminadmin',
   profile_pic: 'https://tse2.explicit.bing.net/th?id=OIP.P6yvfMfNsSgGQY8OyTRzJAHaHc&pid=Api&P=0'

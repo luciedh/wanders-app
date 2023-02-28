@@ -3,7 +3,10 @@
   "theme_color": "#444285",
   "description": "Partez à la découverte de ce qui vous entoure",
   "display": "fullscreen",
-  "name": "wanders",
+  "orietation": "portrait",
+  "short_name": "Wanders",
+  "name": "Wanders",
+  "scope": "https://www.wanders.wiki",
   "icons": [
     <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
     <% files.each_with_index do |file, index| %>

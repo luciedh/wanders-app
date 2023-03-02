@@ -186,7 +186,7 @@ puts "Places to trips association completed"
 
 puts "creating categories"
 Category.create(name: "Histoire")
-Category.create(name: "Personnages Historique")
+Category.create(name: "Personnages Historiques")
 Category.create(name: "Architecture")
 Category.create(name: "Divertissement")
 Category.create(name: "Eglise")
@@ -264,15 +264,11 @@ User.create(
 puts "creating admin user created"
 
 puts "creating favourite places user 1"
-FavouritePlace.create(user_id: 1, place_id: 1)
-FavouritePlace.create(user_id: 1, place_id: 4)
-FavouritePlace.create(user_id: 1, place_id: 18)
-FavouritePlace.create(user_id: 1, place_id: 21)
+FavouritePlace.create(user_id: 1, place_id: 30)
 puts "favourite places user 1 created"
 
 puts "creating comments"
 Comment.create(content: "Sous la colonne, érigée au centre de la Place de la Bastille à la mémoire des insurgés des 3 Glorieuses, reposent les restes de 500 combattants de ces événements. Mais pas seulement ! Y reposent aussi des momies rapportées par Bonaparte de son expédition d'Egypte, et qui furent entreposées à cet endroit par erreur.", rating: 0, user_id: 2, place_id: 4)
-Comment.create(content: "Le premier hôte de la Bastille fut son bâtisseur ! Vers 1367, le prévôt Hugues Aubriot décida de poser la première pierre de la Bastille. Elle était destinée à assurer la protection orientale de Paris contre les Anglais. Par suite de manque de main d'oeuvre, et comme il fallait faire vite, Aubriot fut contraint d'employer le système de la presse. des archers sillonnaient les rues avoisinnantes, et raflant tous les oisifs, les réquisitionnaient pour travailler sur le chantier. Le mécontentement fut général et les plaintes si nombreuses que le malheureux prévôt, disgracié, fut le premier prisonnier de la Bastille, achevée en 1382.", rating: 0, user_id: 3, place_id: 4)
 puts "comments created"
 
 puts "creating already visited places"

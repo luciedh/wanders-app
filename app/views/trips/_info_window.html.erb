@@ -7,8 +7,13 @@
       <h2><%= place.name %></h2>
       <p class="address" style="font-style: italic;"><%= place.address %></p>
       <p>
-        <% place.average_rating.to_i.times do  %>
+        <% rating = place.average_rating.to_i %>
+        <% missing_star = 5 - rating %>
+        <% rating.times do  %>
           <span class="fa-solid fa-star" style="color: #3698B1"></span>
+        <% end %>
+        <% missing_star.times do  %>
+          <span class="fa-regular fa-star" style="color: #3698B1"></span>
         <% end %>
       </p>
       <div class="visited-area">

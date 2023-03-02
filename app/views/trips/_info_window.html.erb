@@ -40,6 +40,7 @@
       <% end %>
     </div>
   </div>
+  <h5>Enrichissez ce lieu :</h5>
    <i class="fa-solid fa-plus comment-cta"
      data-comment-section-target='button'
      data-action = 'click->comment-section#displayComments'>
@@ -47,7 +48,7 @@
   <div class="container d-none"
        data-comment-section-target='section'>
      <%= simple_form_for [place, comment], html: {data: {comment_section_target: 'form', action: "submit->comment-section#createComment"}} do |f| %>
-        <%= f.input :content, label: 'Enrichissez ce lieu :' %>
+        <%= f.input :content, label: false%>
         <%= f.submit 'Valider', class: "w-btn-primary" %>
       <% end %>
   <div class="list" data-comment-section-target = 'list'>

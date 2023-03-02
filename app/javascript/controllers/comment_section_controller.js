@@ -26,7 +26,7 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
-          this.listTarget.insertAdjacentHTML("beforeend", data.inserted_item)
+          this.listTarget.insertAdjacentHTML("afterbegin", data.inserted_item)
           document.querySelector('textarea').value = "";
         };
       })

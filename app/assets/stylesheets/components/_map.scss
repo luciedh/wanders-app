@@ -34,6 +34,9 @@
 .mapboxgl-popup-close-button {
   color: $pink;
   font-size: 36px;
+  height: 32px;
+  width: 32px !important;
+  margin: 12px;
 }
 
 .mapboxgl-popup-tip {

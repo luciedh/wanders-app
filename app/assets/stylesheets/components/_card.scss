@@ -43,10 +43,10 @@ form label{
   margin-bottom: 1rem;
 }
 .visited-area {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: row-reverse;
+  // justify-content: center;
+  // align-items: center;
   padding: 0 1em 1em 1em;
 
   p {
@@ -90,9 +90,9 @@ form label{
 .form-switch {
   margin-left: 0.5em;
 }
-.form-switch .form-check-input {
-  margin-left: 3.5em;
-}
+// .form-switch .form-check-input {
+//   margin-left: 1.5em;
+// }
 
 .fa-circle-check {
   color: $blue;

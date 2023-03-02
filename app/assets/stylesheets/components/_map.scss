@@ -21,7 +21,7 @@
   overflow-y: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-  border-radius: 15px;
+  border-radius: 15px !important;
   height: 65vh;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -40,7 +40,7 @@
   margin: 12px;
 }
 
-.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+.mapboxgl-popup-tip {
   display: none;
   border: none !important;
 }

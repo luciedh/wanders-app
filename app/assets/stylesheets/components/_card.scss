@@ -48,6 +48,11 @@ form label{
   justify-content: center;
   align-items: center;
   padding: 0 1em 1em 1em;
+
+  p {
+    margin: 0;
+    font-style: italic;
+  }
 }
 
 #visited-label{
@@ -80,4 +85,15 @@ form label{
   background-color: $white;
   border: none;
   z-index: 1;
+}
+
+.form-switch {
+  margin-left: 0.5em;
+}
+.form-switch .form-check-input {
+  margin-left: 3.5em;
+}
+
+.fa-circle-check {
+  color: $blue;
 }

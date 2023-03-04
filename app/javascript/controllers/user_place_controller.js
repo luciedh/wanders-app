@@ -42,7 +42,7 @@ export default class extends Controller {
   #addPopupToMap(marker) {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
 
-    new mapboxgl.Marker({color: '#4EEBF5'})
+    new mapboxgl.Marker({color: '#FD479E'})
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup) // Add this
       .addTo(this.map)
@@ -73,7 +73,7 @@ export default class extends Controller {
       el.className = "fa-solid fa-flag";
       el.style.fontSize = "40px";
     }
-    el.style.color = "#4EEBF5";
+    el.style.color = "#FD479E";
     el.style.backgroundSize = '100%';
 
     new mapboxgl.Marker(el, {anchor: "bottom"})

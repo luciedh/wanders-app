@@ -18,7 +18,7 @@ export default class extends Controller {
       this.#createUserMarker(previousUserCoords[0], previousUserCoords[1])
     }
     this.#getCurrentPosition()
-    this.#watchUserlocation()
+    // this.#watchUserlocation()
   }
 
   #setUserCoordsInLocalStorage(lat, lng) {
@@ -50,6 +50,7 @@ export default class extends Controller {
       this.userLng = crd.longitude
       this.#setUserCoordsInLocalStorage(crd.latitude, crd.longitude)
       this.#centerMapToCoords(crd.latitude, crd.longitude)
+      console.log([this.userLat, this.userLng]);
     }
 
     const error = (err) => {
@@ -186,9 +187,9 @@ export default class extends Controller {
       .addTo(this.map)
   }
 
-  #watchUserlocation() {
-    navigator.geolocation.watchPosition(this.#getUserLocation.bind(this));
-  }
+  // #watchUserlocation() {
+  //   navigator.geolocation.watchPosition(this.#getUserLocation.bind(this));
+  // }
 
   #getUserLocation(position) {
     if (this.userMarker) this.userMarker.remove()

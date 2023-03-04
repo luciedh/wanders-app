@@ -147,7 +147,7 @@ export default class extends Controller {
   #addPopupToMap() {
     this.markersValue.slice(1,-2).forEach((marker) => {
       const popup   = new mapboxgl.Popup().setHTML(marker.info_window_html)
-      const myColor = marker.visited ? '#4EEBF5' : '#151468'
+      const myColor = marker.visited ? '#FD479E' : '#151468'
 
       new mapboxgl.Marker({color: myColor})
         .setLngLat([ marker.lng, marker.lat ])
@@ -163,7 +163,7 @@ export default class extends Controller {
     const el = document.createElement('i');
     el.className            = "fa-solid fa-map-pin";
     el.style.fontSize       = "30px";
-    el.style.color          = marker_first.visited ? '#4EEBF5' : '#151468'
+    el.style.color          = marker_first.visited ? '#FD479E' : '#151468'
     el.style.backgroundSize = '100%';
 
     new mapboxgl.Marker(el)
@@ -177,7 +177,7 @@ export default class extends Controller {
     const el_finish = document.createElement('i');
     el_finish.className            = "fa-solid fa-flag";
     el_finish.style.fontSize       = "30px";
-    el_finish.style.color          = marker_last.visited ? '#4EEBF5' : '#151468'
+    el_finish.style.color          = marker_last.visited ? '#FD479E' : '#151468'
     el_finish.style.backgroundSize = '100%';
 
     new mapboxgl.Marker(el_finish)
